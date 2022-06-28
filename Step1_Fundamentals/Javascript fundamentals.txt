@@ -1,0 +1,131 @@
+we can also change te datatye of any varible by using let it with it 
+
+2**3--->2*2*2
+
+\n\---->endline
+
+`my name is ${VaribleName}.`
+
+if we declare any varible inside the code block than we have no access to taht varible outside the block
+
+Number()
+string()
+boolean()
+
+'2'-'2'+3=3 
+beacuse - * / operater with the string numbers can convert them into the numbers.But
+'2'+'2'-3=1;
+beacuse + ooperator with the string varibles convert them into the string
+
+boolean
+0
+undefined
+null
+nan
+''-->empty string 
+these are alll the falsy values means teh part inside them is not executed
+
+the number we get from the prompt box is always a string
+
+so firstly convert into number by Number() and use the === operator 
+
+use multiple switch statemente together
+different betwwen expressions and statements
+
+ternay operator
+if age=>18? 'join college':'join school';
+if else conditions are not used in the template litrerals but the ternay operatoers are used int the template literals
+
+'use strict';----->strict mode should be always on to get the all strictness and proper errors on the accidental bugs
+
+function declaration and function expressions in function declartion we use the calling before the declaartion but in expression functions is always firstly defined and then use the function calling after it .....prefer the function expression beacuse everythig is stored in a varible
+
+arrow functions 
+parameterName => 23-78;
+const age=(birthyear,name)=>{
+console.log('...............');
+}
+
+Arrays
+arr.push('muhib')----->add the last element;
+arr.pop()------>remove the last element;
+arr.push('muhib')----remove the specific element
+arr.unshift('muhib)----->add the element at the start of the array
+arr.shift()---->to remove the elemenst at he start of the array
+arr.indexOf('muhib')---->gives the index of the element in teh array
+arr.includes('muhib')----->returs the boolean value as muhib in the array includes or not
+
+Objects
+all the methods inside the object are written as methodName:'value',we also include the functions as the expression declartion and retrive it
+we use as obj.name; or obj['name'], the paranthesis method is used when the value from the prompt box is stored in the some string variable and
+used to retrive it from object .
+use the this keyword inside the object as to access the methods inside the object
+let mark={
+  name:'Mark',
+  mass:78,
+  height:1.69,
+  calBMI:function()
+  {
+    this.property=this.mass/(this.height**2);
+    return this.property;
+  }
+};
+
+
+Loops
+create the empty array and to store the results just arr.push(result[i]);
+
+and to create the random between the range
+math.trunc(math.random()*6)+1);
+
+t1.concat(t2);----->to merge two arrays
+console.table(_muhb);-->to print the bigger objects int the form of table
+
+Dom manipulation is not the part of the javascript it is the apis of the web browser when we retrive nay of the data from the browser it is always in the form of the strings
+
+
+document.querrySelector(p).value;
+document.querrySelector(.).textContent;
+document.querrySelector(#).style.backGround='';
+document.classList.remove('ClassName');
+document.classList.add('ClassName');
+document.classList.contain('ClassName');
+document.getElementByID('idName');
+document.classList.toggle('ClassName');---if the class is present then it remove it and if not not present then add it.
+e is the the event object handler 
+to use the function inside the event listener than we have to specify the name of the function expect calling it 
+
+Important Concepts
+JS ia an interpreted language .It is compiled at the run time.
+Js is an actually the interpreted language means the source code is compiled and run at the same time line by line ,so js became slower and slower tehna the other languages ,so in big applications we don't need it.
+But the modern javaScript is an just in time (JIT) compilation language.The complet code is compiled first and portable file is not formed like in the other languages a C and java ,and then it is executed at the end time.
+
+
+In this time , the firstly code is parse then compiled and then executed , then optimized the code and then made the copy of the previous file and swap it agian again to make the engine better like used in V8 google engine.
+
+
+
+Ressaigning the global variable inside the inner scope chnage the global varible value.But if we make the new variable same as gobal varible name inside the inner scope then this variable as the block scope and do not rewirte the global scope varibale 
+
+hoisting of the varibales is such that the let and const has thhe temporal red zone (TDZ) and var has the undefind falsy value for the hoisting before without using the 'use strict' mode we can also access the varibels outside the block.
+
+This keyword:
+This keyword is to be such that the  inside the functionn it is the function scope and outside the function in the code it is the the gloal window object pointing.But in the arrow functions it is pointing to global window object(or the most important parent scope).This keyword is used in the objects and Dom event handlers also.This keyword refers to the method of the object where the object is calling.
+we can aslo create the method of the object outside the object .then copy the method of another objecr into it.when we refer the this keyword to that new method ,than it refers to the that new object .So,conclude that this keyword is not static it is dynamic .If we use the var variable as a global varible then ,this is formed also inside the window object so when we call it inside the arrow functions this.varName then it refers to the gloabal window object so it prints it .So using the var is very dangerous.
+When we want to use the global this methods inside the function of the global function then this keyword inside the function has its own scope so to get the properties of the global function and object then we know that arrow function has the this scope as a global scope then we use the arrow function to get rid of this problem.
+Arguments key word only refers to the regular functions not the arrow functions.
+
+
+Premittives and object literals
+all the preemitive datatypes has the vlue and address at the stack so copying the new varibel from the previous varible is to copy the address value and make new address and assign it.
+But the object literals include,objects,functions ,blocks are to be stored as the heap concept .
+In which the object is stored in the heap and ist address is stored in the value of the stack varible address so when copy the new object the n we basically copy the address so changing the any value in the address it basically change the original value in the heap.
+To shallow copy the objects writtenas 
+
+const newObj=Object.assign({},oldObj);//this copy the whole oject in the new object and assign a new heap
+but the proble is taht if we have any array,funtion and object inside the object its is not copied to the new heap varible so any chaning in teh old inside arrays it must change the new object array as well.It is done by the deepy copy .
+
+
+Arrays Destructing
+Onjects destructing
+spread Operater
