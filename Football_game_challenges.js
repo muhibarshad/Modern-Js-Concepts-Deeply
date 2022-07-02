@@ -40,7 +40,6 @@ const game = {
   },
 };
 
-
 //==============================================
 //First coding challenges
 //==============================================
@@ -65,7 +64,6 @@ printGoal(...game.scored);
 team1 < team2 && console.log("Team 1 is more likely to win");
 team1 > team2 && console.log("Team 2 is more likely to win");
 
-
 //==============================================
 //second coding challenges
 //==============================================
@@ -82,47 +80,85 @@ for (const item of oddValue) {
 averageOdd /= oddValue.length;
 console.log(averageOdd);
 //3-
-for(const [team,odd] of Object.entries(game.odds)){
-  let teamStr=team==='x'?'Draw':`Of victory ${game[team]}`;
+for (const [team, odd] of Object.entries(game.odds)) {
+  let teamStr = team === "x" ? "Draw" : `Of victory ${game[team]}`;
   console.log(`Odd ${teamStr} : ${odd}`);
 }
 //4-
 const scorers = {};
 for (const player of game.scored) {
-  console.log(scorers[player] );
+  console.log(scorers[player]);
   scorers[player] ? scorers[player]++ : (scorers[player] = 1);
 }
 console.log(scorers);
-
 
 //==============================================
 //Third coding challenges
 //==============================================
 
 const gameEvents = new Map([
-  [17, '⚽ GOAL'],
-  [36, '� Substitution'],
-  [47, '⚽ GOAL'],
-  [61, '� Substitution'],
-  [64, '� Yellow card'],
-  [69, '� Red card'],
-  [70, '� Substitution'],
-  [72, '� Substitution'],
-  [76, '⚽ GOAL'],
-  [80, '⚽ GOAL'],
-  [92, '� Yellow card'],
-  ]);
+  [17, "⚽ GOAL"],
+  [36, "� Substitution"],
+  [47, "⚽ GOAL"],
+  [61, "� Substitution"],
+  [64, "� Yellow card"],
+  [69, "� Red card"],
+  [70, "� Substitution"],
+  [72, "� Substitution"],
+  [76, "⚽ GOAL"],
+  [80, "⚽ GOAL"],
+  [92, "� Yellow card"],
+]);
 
 //1-
-const events=[...new Set(gameEvents.values())];
+const events = [...new Set(gameEvents.values())];
 console.log(events);
 //2-
 gameEvents.delete(64);
 console.log(gameEvents);
 //3-
-let time=[...gameEvents.keys()].pop();
-console.log(`An event happened ,on average ,on every ${time/gameEvents.size} minutes`);
+let time = [...gameEvents.keys()].pop();
+console.log(
+  `An event happened ,on average ,on every ${time / gameEvents.size} minutes`
+);
 //4-
-for(const [key,value] of gameEvents){
-     console.log(`[${key<=45?'First Half':'Second Half'}] ${key} : ${value}`);
+for (const [key, value] of gameEvents) {
+  console.log(
+    `[${key <= 45 ? "First Half" : "Second Half"}] ${key} : ${value}`
+  );
 }
+
+//==============================================
+//Fourth coding challenge
+//==============================================
+// 1-
+document.body.append(document.createElement("textarea"));
+document.body.append(document.createElement("button"));
+
+let btn = document.querySelector("button");
+
+btn.addEventListener("click", function camelCase() {
+  let varaibleName = document.querySelector("textarea").value.toLowerCase();
+  let arrVarible = varaibleName.split(" ");
+  for (const [index, word] of arrVarible.entries()) {
+    const [first, second] = word.split("_");
+    let camelCase = first + second[0].toUpperCase() + second.slice(1);
+    console.log(camelCase + "✅".repeat(index + 1));
+  }
+});
+
+// //betterway
+// document.body.append(document.createElement("textarea"));
+// document.body.append(document.createElement("button"));
+
+// let btn = document.querySelector("button");
+
+// btn.addEventListener("click", function camelCase() {
+//   let varaibleName = document.querySelector("textarea").value.toLowerCase();
+//   let arrVarible = varaibleName.split("\n");
+//   for (const [index, word] of arrVarible.entries()) {
+//     const [first, second] = word.trim().split("_");
+//     let camelCase =`${first}${second.replace(second[0],second[0].toUpperCase())}`;
+//     console.log(`${camelCase.padEnd(20)}${'✅'.repeat(index+1)}`);
+//   }
+// });
