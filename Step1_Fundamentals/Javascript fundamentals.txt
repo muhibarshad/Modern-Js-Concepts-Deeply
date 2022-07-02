@@ -1,3 +1,11 @@
+
+*********Difference between NUll and Undefined**********
+null is an assigned value. It means nothing.
+undefined means a variable has been declared but not defined yet.
+null is an object. undefined is of type undefined.
+null !== undefined but null == undefined.
+
+
 we can also change te datatye of any varible by using let it with it 
 
 2**3--->2*2*2
