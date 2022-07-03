@@ -1,4 +1,4 @@
-# Argument passing in the funtions
+# 🔴Argument passing in the funtions
 ## Permittive and objects 
 ##### Permittive values passing to functions.
  When we should pass the permititive dataType as an argument to the function .
@@ -26,7 +26,7 @@
  address value is passed not refernce.
 
 
-# First Class Functions and Higher Order Functions
+# 🔴First Class Functions and Higher Order Functions
  Functions are be expressions as:
  ```
  const sum=function(a,b){
