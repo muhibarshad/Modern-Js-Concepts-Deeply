@@ -14,6 +14,7 @@
    } 
  console.log(x); 
  console.log(z(x)); </sub>
+ 
 ##### Objects passing to functions.
  In objects,consider the same scenerio in the above portion,functions parameter copy the
  address of the argument object in the stack not make the copy of the values in the heap.
