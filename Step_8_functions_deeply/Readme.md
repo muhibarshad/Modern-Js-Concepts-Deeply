@@ -7,7 +7,7 @@
  in the C++ (pass by value).
  ###### Example:
 
-```
+```json
    let x=4; 
     function z(y){ 
      y=5; 
