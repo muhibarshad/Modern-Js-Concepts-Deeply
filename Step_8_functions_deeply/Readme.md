@@ -6,14 +6,15 @@
  function parameter does not effect the original value of the argument.This is same
  in the C++ (pass by value).
  ###### Example:
-  <script>
+
+  <sup>
    let x=4; 
     function z(y){ 
      y=5; 
      return y; 
    } 
  console.log(x); 
- console.log(z(x)); </script>
+ console.log(z(x)); </sup>
 
 ##### Objects passing to functions.
  In objects,consider the same scenerio in the above portion,functions parameter copy the
