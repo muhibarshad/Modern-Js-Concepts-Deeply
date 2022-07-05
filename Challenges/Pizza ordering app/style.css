@@ -43,7 +43,11 @@ td:hover{
 .col-2 img{
     height: 48rem;
 }
-.order{
+.row-order{
+    display: grid;
+    grid-template-columns: 10rem 10rem;
+}
+.col-order-1{
     background-color: rgb(254, 254, 254);
     height: 7rem;
     width:50rem;
@@ -54,7 +58,27 @@ td:hover{
     font-size: 2rem;
     border: 2px solid black;
     cursor: pointer;
+    border-radius: 50px;
 }
+.col-order-1:hover,.col-order-2:hover{
+    transform: scale(1.05);
+}
+.col-order-2{
+    background-color: rgb(232, 8, 8);
+    color: white;
+    height: 5rem;
+    width:15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:2rem 100rem;
+    font-size: 1.5rem;
+    border: 2px solid black;
+    cursor: pointer;
+    border-radius: 50px;
+
+}
+
 /*Dialog box*/
 .size{
     position: absolute;
@@ -138,9 +162,14 @@ td:hover{
 }
 
 
+
 /*After completetion*/
 .confirm{
     background-color: green;
+    color: white;
+}
+.selected{
+    background-color: rgb(0, 124, 165);
     color: white;
 }
 .hidden{
