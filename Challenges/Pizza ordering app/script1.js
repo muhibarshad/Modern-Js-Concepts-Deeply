@@ -10,18 +10,19 @@ const ok = document.querySelector(".OK");
 const price = document.querySelector(".price");
 const orderNow = document.querySelector(".order");
 const cancelOrder = document.querySelector(".cancelOrder");
+const error = document.querySelector(".error");
 const pricesPizza = [
   [600, 500, 350, 400, 320, 250],
   [800, 650, 550, 630, 720, 670],
   [1200, 990, 1050, 890, 1000, 800],
 ];
 
+//Data of pizza and customers
 let pizzaIndex = 0;
 let pizzaName = "";
 let sizeName = "large";
 let priceName = "";
-//Data of pizza
-let orderDetails =  {
+let orderDetails = {
   namePizza: "",
   sizePizza: sizeName,
   pricePizza: "",
@@ -48,14 +49,14 @@ defaultStarter();
 
 //show model-pizzaSelection
 for (const [index, ele] of pizzaMenu.entries()) {
-  pizzaMenu[index].addEventListener("click", modelShow);
   pizzaMenu[index].addEventListener("click", function () {
+    modelShow();
+    pizzaIndex = index;
     pizzaName = pizzaMenu[index].innerText;
     priceName = pricesPizza[2][index];
     price.innerText = priceName;
-    orderDetails.pricePizza = priceName;
-    pizzaIndex = index;
     orderDetails.namePizza = pizzaName;
+    orderDetails.pricePizza = priceName;
     document.querySelector(".name").innerText = pizzaName;
   });
 }
@@ -76,22 +77,42 @@ for (const [index, ele] of sizeMenu.entries()) {
     orderDetails.pricePizza = priceName;
   });
 }
-//OnCancel
-cancel.addEventListener("click", function () {
+
+//initial-condition
+const initial = function () {
   deafultSelection();
   defaultStarter();
-});
+  for (const [i, el] of pizzaMenu.entries()) {
+    pizzaMenu[i].classList.remove("selected");
+  }
+  orderNow.classList.remove("confirm");
+};
+
+//OnCancel
+cancel.addEventListener("click", initial);
 
 //onOk
 ok.addEventListener("click", function () {
   pizzaMenu[pizzaIndex].classList.add("selected");
   orderNow.classList.add("confirm");
-  CurrentPersonOrders.push(orderDetails);
-  console.log(orderDetails);
-  console.log(CurrentPersonOrders);
+  let nextOrder = Object.assign({}, orderDetails);
+  CurrentPersonOrders.push(nextOrder);
+  error.classList.contains("hidden") || error.classList.add("hidden");
 });
+
+//orderNow
+orderNow.addEventListener("click", function () {
+  if (CurrentPersonOrders.length === 0) {
+    error.classList.remove("hidden");
+  } else {
+    totalOrders.push(CurrentPersonOrders);
+    CurrentPersonOrders = [];
+    initial();
+  }
+});
+
 //cancelOrder
 cancelOrder.addEventListener("click", function () {
-  pizzaMenu[pizzaIndex].classList.remove("selected");
-  orderNow.classList.remove("confirm");
+  initial();
+  CurrentPersonOrders = [];
 });
