@@ -137,9 +137,6 @@ cancelOrder.addEventListener("click", function () {
 export { totalOrders };
 /*Oredr page script*/
 /****First part*/
-//adding pizza details in pizza details table
-//checking all inputs are filled are not
-//color chnging the confirm
 //calculate the price on no changing
 //chnage the total price according to it
 
@@ -149,19 +146,32 @@ export { totalOrders };
 //page also includes all the details
 //on payment display the dialog box of all the details
 //incudding date /time/cash delivered/person details/pizzadetails
-// export {totalOrders};
-// let errorField = document.querySelectorAll(".error-field");
-// let htmlI="";
-//         htmlI+=`<div class="missing">
-//         <span>Error ! 🚫  Input field is missing ⛔</span>
-//       </div>`;
-// errorField[index].innerHTML=htmlI;
 
-//2-Checking Input fields
 
 let flag = false;
-const confirm = document.querySelector(".button");
+let confirm = document.querySelector(".button");
+let btnNew = document.querySelector(".btn-new");
 let inputValues = document.querySelectorAll("input");
+
+//confirm color changing on complete input field
+document.addEventListener("keydown", function () {
+  let count=0;
+  for (const [index, value] of inputValues.entries()) {
+    if (value.value !== "") {
+          count++;
+          if(count===4){
+            btnNew.style.backgroundColor = "rgb(0, 100, 188)";
+            btnNew.style.color = "white";
+          }
+          else{
+            btnNew.style.backgroundColor = "rgb(190, 225, 255)";
+            btnNew.style.color = "black";     
+          }
+    }
+  }
+});
+
+//Input validation
 confirm.addEventListener("click", function () {
   for (const [index, Value] of inputValues.entries()) {
     if (Value.value === "") {
@@ -180,5 +190,3 @@ confirm.addEventListener("click", function () {
     }
   }
 });
-
-
