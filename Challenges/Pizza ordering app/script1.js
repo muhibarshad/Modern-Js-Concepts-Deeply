@@ -102,13 +102,16 @@ orderNow.addEventListener("click", function () {
     error.classList.remove("hidden");
   } else {
     totalOrders.push(CurrentPersonOrders);
-     //second page
+    //second page
     let table = document.querySelector(".tableOf2nd-new");
     let html = "";
     html = "";
-    for (const 
-      { namePizza, sizePizza, pricePizza, noOfpizza }
-     of CurrentPersonOrders) {
+    for (const {
+      namePizza,
+      sizePizza,
+      pricePizza,
+      noOfpizza,
+    } of CurrentPersonOrders) {
       html += `<table class="table2">
   <tr>
     <td>${namePizza}</td>
@@ -121,8 +124,8 @@ orderNow.addEventListener("click", function () {
     table.innerHTML = html;
     CurrentPersonOrders = [];
     initial();
-    pageOne.classList.add('hidden');
-    pageTwo.classList.remove('hidden');
+    pageOne.classList.add("hidden");
+    pageTwo.classList.remove("hidden");
     console.log(totalOrders);
   }
 });
@@ -131,7 +134,7 @@ cancelOrder.addEventListener("click", function () {
   initial();
   CurrentPersonOrders = [];
 });
-export{totalOrders};
+export { totalOrders };
 /*Oredr page script*/
 /****First part*/
 //adding pizza details in pizza details table
@@ -146,18 +149,36 @@ export{totalOrders};
 //page also includes all the details
 //on payment display the dialog box of all the details
 //incudding date /time/cash delivered/person details/pizzadetails
-// export {totalOrders};/
+// export {totalOrders};
+// let errorField = document.querySelectorAll(".error-field");
+// let htmlI="";
+//         htmlI+=`<div class="missing">
+//         <span>Error ! 🚫  Input field is missing ⛔</span>
+//       </div>`;
+// errorField[index].innerHTML=htmlI;
 
+//2-Checking Input fields
 
-//2-
-const confirm=document.querySelector('.button');
-let inputValues=document.querySelectorAll('input');
-confirm.addEventListener('click',function(){
-   for(const [index,Value] of inputValues.entries()){
-       if(Value.value===""){
-        Value+=`<div class="missing">
-        <span>Error ! 🚫  Input field is missing ⛔</span>
-      </div>`;
-       }
-   }
+let flag = false;
+const confirm = document.querySelector(".button");
+let inputValues = document.querySelectorAll("input");
+confirm.addEventListener("click", function () {
+  for (const [index, Value] of inputValues.entries()) {
+    if (Value.value === "") {
+      Value.placeholder = "Error ! 🚫  Input field is missing ⛔";
+      Value.style.borderBottom = " 2px solid red";
+      flag = true;
+    }
+  }
+  if (flag === true) {
+    for (const [indexs, valueQ] of inputValues.entries()) {
+      document.addEventListener("keydown", function () {
+        if (valueQ.value !== "") {
+          valueQ.style.borderBottom = " 1px solid black";
+        }
+      });
+    }
+  }
 });
+
+
