@@ -11,7 +11,8 @@ const price = document.querySelector(".price");
 const orderNow = document.querySelector(".order");
 const cancelOrder = document.querySelector(".cancelOrder");
 const error = document.querySelector(".error");
-const linkPage = document.querySelector("a");
+const pageOne = document.querySelector(".contanier");
+const pageTwo = document.querySelector(".contanier-new");
 const pricesPizza = [
   [600, 500, 350, 400, 320, 250],
   [800, 650, 550, 630, 720, 670],
@@ -77,7 +78,6 @@ const initial = function () {
     pizzaMenu[i].classList.remove("selected");
   }
   orderNow.classList.remove("confirm");
-  linkPage.style.color = "black";
 };
 
 //OnCancel
@@ -95,7 +95,6 @@ ok.addEventListener("click", function () {
   };
   CurrentPersonOrders.push(orderDetails);
   error.classList.contains("hidden") || error.classList.add("hidden");
-  linkPage.style.color = "white";
 });
 //orderNow
 orderNow.addEventListener("click", function () {
@@ -105,7 +104,8 @@ orderNow.addEventListener("click", function () {
     totalOrders.push(CurrentPersonOrders);
     CurrentPersonOrders = [];
     initial();
-    linkPage.href = "orderNow.html";
+    pageOne.classList.add('hidden');
+    pageTwo.classList.remove('hidden');
   }
 });
 //cancelOrder
