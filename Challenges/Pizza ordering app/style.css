@@ -200,7 +200,15 @@
   .hidden {
     display: none;
   }
-  
+  .missing{
+    background-color: rgb(255, 170, 170);
+    margin-left: 30vh;
+    padding: 0.5rem 2rem;
+    text-align: right;
+    width: 50vh;
+    border-radius: 1rem;
+    border: 1px solid black;
+  }
   
   
   /*Second-page*/

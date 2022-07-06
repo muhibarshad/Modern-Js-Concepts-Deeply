@@ -147,21 +147,17 @@ export{totalOrders};
 //on payment display the dialog box of all the details
 //incudding date /time/cash delivered/person details/pizzadetails
 // export {totalOrders};/
-    //second page
-  //   let table = document.querySelector(".tableOf2nd");
-  //   let html = "";
-  //   html = "";
-  //   for (const [
-  //     { namePizza, sizePizza, pricePizza, noOfpizza },
-  //     ...others
-  //   ] of totalOrders) {
-  //     html += `<table>
-  // <tr>
-  //   <td>${namePizza}</td>
-  //   <td>${sizePizza}</td>
-  //   <td><input type="number" name="" class="NO" value=${noOfpizza} /></td>
-  //   <td>${pricePizza}</td>
-  // </tr>
-  // </table>`;
-  //   }
-  //   table.innerHTML = html;
+
+
+//2-
+const confirm=document.querySelector('.button');
+let inputValues=document.querySelectorAll('input');
+confirm.addEventListener('click',function(){
+   for(const [index,Value] of inputValues.entries()){
+       if(Value.value===""){
+        Value+=`<div class="missing">
+        <span>Error ! 🚫  Input field is missing ⛔</span>
+      </div>`;
+       }
+   }
+});
