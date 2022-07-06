@@ -11,6 +11,7 @@ const price = document.querySelector(".price");
 const orderNow = document.querySelector(".order");
 const cancelOrder = document.querySelector(".cancelOrder");
 const error = document.querySelector(".error");
+const linkPage=document.querySelector('a');
 const pricesPizza = [
   [600, 500, 350, 400, 320, 250],
   [800, 650, 550, 630, 720, 670],
@@ -22,7 +23,6 @@ let pizzaIndex = 0;
 let pizzaName = "";
 let sizeName = "large";
 let priceName = "";
-
 let CurrentPersonOrders = [];
 const totalOrders = [];
 
@@ -77,6 +77,7 @@ const initial = function () {
     pizzaMenu[i].classList.remove("selected");
   }
   orderNow.classList.remove("confirm");
+  linkPage.style.color = "black";
 };
 
 //OnCancel
@@ -94,6 +95,7 @@ ok.addEventListener("click", function () {
   };
   CurrentPersonOrders.push(orderDetails);
   error.classList.contains("hidden") || error.classList.add("hidden");
+  linkPage.style.color='white';
 });
 
 //orderNow
@@ -104,6 +106,7 @@ orderNow.addEventListener("click", function () {
         totalOrders.push(CurrentPersonOrders);
         CurrentPersonOrders = [];
         initial();
+        linkPage.href='orderNow.html';
     }
 });
 
@@ -112,3 +115,21 @@ cancelOrder.addEventListener("click", function () {
   initial();
   CurrentPersonOrders = [];
 });
+
+
+/*Oredr page script*/
+/****First part*/
+//adding pizza details in pizza details table
+//checking all inputs are filled are not
+//color chnging the confirm
+//calculate the price on no changing
+//chnage the total price according to it
+
+/****Second part****/
+//on confirm display the another page
+//page having the payment method
+//page also includes all the details
+//on payment display the dialog box of all the details
+//incudding date /time/cash delivered/person details/pizzadetails
+
+
