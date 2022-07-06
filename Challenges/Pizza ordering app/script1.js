@@ -1,4 +1,4 @@
-"use strict";
+// "use strict";
 
 //varaibles
 const pizzaMenu = document.querySelectorAll("td");
@@ -24,7 +24,7 @@ let pizzaName = "";
 let sizeName = "large";
 let priceName = "";
 let CurrentPersonOrders = [];
-const totalOrders = [];
+let totalOrders = [];
 
 //supporting-functions
 const modelShow = function () {
@@ -97,7 +97,6 @@ ok.addEventListener("click", function () {
   error.classList.contains("hidden") || error.classList.add("hidden");
   linkPage.style.color = "white";
 });
-
 //orderNow
 orderNow.addEventListener("click", function () {
   if (CurrentPersonOrders.length === 0) {
@@ -107,34 +106,14 @@ orderNow.addEventListener("click", function () {
     CurrentPersonOrders = [];
     initial();
     linkPage.href = "orderNow.html";
-
-//second page
-    let table = document.querySelector(".tableOf2nd");
-    let html="";
-    html="";
-    for (const [
-      { namePizza, sizePizza, pricePizza, noOfpizza },
-      ...others
-    ] of totalOrders) {
-      html += `<table>
-  <tr>
-    <td>${namePizza}</td>
-    <td>${sizePizza}</td>
-    <td><input type="number" name="" class="NO" value=${noOfpizza} /></td>
-    <td>${pricePizza}</td>
-  </tr>
-  </table>`;
-    }
-    table.innerHTML=html;
   }
 });
-
 //cancelOrder
 cancelOrder.addEventListener("click", function () {
   initial();
   CurrentPersonOrders = [];
 });
-
+export{totalOrders};
 /*Oredr page script*/
 /****First part*/
 //adding pizza details in pizza details table
@@ -149,3 +128,22 @@ cancelOrder.addEventListener("click", function () {
 //page also includes all the details
 //on payment display the dialog box of all the details
 //incudding date /time/cash delivered/person details/pizzadetails
+// export {totalOrders};/
+    //second page
+  //   let table = document.querySelector(".tableOf2nd");
+  //   let html = "";
+  //   html = "";
+  //   for (const [
+  //     { namePizza, sizePizza, pricePizza, noOfpizza },
+  //     ...others
+  //   ] of totalOrders) {
+  //     html += `<table>
+  // <tr>
+  //   <td>${namePizza}</td>
+  //   <td>${sizePizza}</td>
+  //   <td><input type="number" name="" class="NO" value=${noOfpizza} /></td>
+  //   <td>${pricePizza}</td>
+  // </tr>
+  // </table>`;
+  //   }
+  //   table.innerHTML = html;
