@@ -102,10 +102,28 @@ orderNow.addEventListener("click", function () {
     error.classList.remove("hidden");
   } else {
     totalOrders.push(CurrentPersonOrders);
+     //second page
+    let table = document.querySelector(".tableOf2nd-new");
+    let html = "";
+    html = "";
+    for (const 
+      { namePizza, sizePizza, pricePizza, noOfpizza }
+     of CurrentPersonOrders) {
+      html += `<table class="table2">
+  <tr>
+    <td>${namePizza}</td>
+    <td>${sizePizza}</td>
+    <td><input type="number" name="" class="NO-new" value=${noOfpizza} /></td>
+    <td>${pricePizza}</td>
+  </tr>
+  </table>`;
+    }
+    table.innerHTML = html;
     CurrentPersonOrders = [];
     initial();
     pageOne.classList.add('hidden');
     pageTwo.classList.remove('hidden');
+    console.log(totalOrders);
   }
 });
 //cancelOrder
