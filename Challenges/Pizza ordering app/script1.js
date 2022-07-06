@@ -1,4 +1,6 @@
-// "use strict";
+"use strict";
+
+/*First page*/
 
 //varaibles
 const pizzaMenu = document.querySelectorAll("td");
@@ -126,7 +128,6 @@ orderNow.addEventListener("click", function () {
     initial();
     pageOne.classList.add("hidden");
     pageTwo.classList.remove("hidden");
-    console.log(totalOrders);
   }
 });
 //cancelOrder
@@ -134,19 +135,11 @@ cancelOrder.addEventListener("click", function () {
   initial();
   CurrentPersonOrders = [];
 });
-export { totalOrders };
-/*Oredr page script*/
-/****First part*/
-//calculate the price on no changing
-//chnage the total price according to it
 
-/****Second part****/
-//on confirm display the another page
-//page having the payment method
-//page also includes all the details
-//on payment display the dialog box of all the details
-//incudding date /time/cash delivered/person details/pizzadetails
 
+/*Second page*/
+
+//varibles
 let flag = false;
 let confirm = document.querySelector(".button");
 let btnNew = document.querySelector(".btn-new");
@@ -188,3 +181,22 @@ confirm.addEventListener("click", function () {
     }
   }
 });
+
+
+
+
+
+
+
+/*********************PESUDOCODE REMAINING FUNCTIONS*************************/
+/*Oredr page script*/
+/****First part*/
+//calculate the price on no changing
+//chnage the total price according to it
+
+/****Second part****/
+//on confirm display the another page
+//page having the payment method
+//page also includes all the details
+//on payment display the dialog box of all the details
+//incudding date /time/cash delivered/person details/pizzadetails
