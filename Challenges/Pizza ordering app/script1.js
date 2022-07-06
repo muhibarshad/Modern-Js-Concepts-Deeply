@@ -147,7 +147,6 @@ export { totalOrders };
 //on payment display the dialog box of all the details
 //incudding date /time/cash delivered/person details/pizzadetails
 
-
 let flag = false;
 let confirm = document.querySelector(".button");
 let btnNew = document.querySelector(".btn-new");
@@ -155,18 +154,17 @@ let inputValues = document.querySelectorAll("input");
 
 //confirm color changing on complete input field
 document.addEventListener("keydown", function () {
-  let count=0;
+  let count = 0;
   for (const [index, value] of inputValues.entries()) {
     if (value.value !== "") {
-          count++;
-          if(count===4){
-            btnNew.style.backgroundColor = "rgb(0, 100, 188)";
-            btnNew.style.color = "white";
-          }
-          else{
-            btnNew.style.backgroundColor = "rgb(190, 225, 255)";
-            btnNew.style.color = "black";     
-          }
+      count++;
+      if (count === 4) {
+        btnNew.style.backgroundColor = "rgb(0, 100, 188)";
+        btnNew.style.color = "white";
+      } else {
+        btnNew.style.backgroundColor = "rgb(190, 225, 255)";
+        btnNew.style.color = "black";
+      }
     }
   }
 });
