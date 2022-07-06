@@ -22,6 +22,7 @@ let pizzaIndex = 0;
 let pizzaName = "";
 let sizeName = "large";
 let priceName = "";
+
 let CurrentPersonOrders = [];
 const totalOrders = [];
 
