@@ -132,10 +132,6 @@ orderNow.addEventListener("click", function () {
     <td>${pricePizza}</td>
   </tr>
   </table>`;
-      function change(num) {
-        console.log(num);
-        // return pricePizza*=num;
-      }
       totalPrice += pricePizza;
     }
     table.innerHTML = html;
@@ -204,6 +200,7 @@ for (const item of changeNo) {
   });
 }
 
+
 //calculate the price on no changing
 
 /*********************PESUDOCODE REMAINING FUNCTIONS*************************/
@@ -218,3 +215,12 @@ for (const item of changeNo) {
 //page also includes all the details
 //on payment display the dialog box of all the details
 //incudding date /time/cash delivered/person details/pizzadetails
+
+//changing price on button click;
+const plus=document.querySelector('.plus');
+const minus=document.querySelector('.minus');
+let NO_OF_PIZZA=document.querySelector('.NO_OF_PIZZA');
+plus.addEventListener('click',function(){
+  let  pizzaCount=Number(NO_OF_PIZZA.innerText);
+  console.log(pizzaCount);
+})
