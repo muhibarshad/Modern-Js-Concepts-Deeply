@@ -42,9 +42,6 @@ const deafultSelection = function () {
 const defaultStarter = function () {
   sizeMenu[2].style.backgroundColor = "green";
 };
-const tester= function(){
-  console.log('ali');
-};
 //default starters
 defaultStarter();
 
@@ -111,6 +108,7 @@ orderNow.addEventListener("click", function () {
     let table = document.querySelector(".tableOf2nd-new");
     let html = "";
     let totalPrice = 0;
+    let f
     html = "";
     for (let {
       namePizza,
@@ -118,6 +116,9 @@ orderNow.addEventListener("click", function () {
       pricePizza,
       noOfpizza,
     } of CurrentPersonOrders) {
+      const tester = function () {
+        console.log("ali");
+      };
       html += `<table class="table2">
   <tr>
     <td>${namePizza}</td>
@@ -135,6 +136,9 @@ orderNow.addEventListener("click", function () {
   </tr>
   </table>`;
       totalPrice += pricePizza;
+      const plus = document.querySelector(".plus");
+      // const minus = document.querySelector(".minus");
+      // let NO_OF_PIZZA = document.querySelector(".NO_OF_PIZZA");
     }
     table.innerHTML = html;
     CurrentPersonOrders = [];
@@ -202,7 +206,6 @@ for (const item of changeNo) {
   });
 }
 
-
 //calculate the price on no changing
 
 /*********************PESUDOCODE REMAINING FUNCTIONS*************************/
@@ -219,11 +222,3 @@ for (const item of changeNo) {
 //incudding date /time/cash delivered/person details/pizzadetails
 
 //changing price on button click;
-const plus=document.querySelector('.plus');
-const minus=document.querySelector('.minus');
-let NO_OF_PIZZA=document.querySelector('.NO_OF_PIZZA');
-plus.addEventListener('click',function(){
-  let  pizzaCount=1;
-  console.log(pizzaCount);
-})
-
