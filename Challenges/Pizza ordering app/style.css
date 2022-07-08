@@ -337,13 +337,21 @@ table {
 .NO_OF_PIZZA{
   height: 3.7vh;
   width: 7vh;
-  box-shadow: 2px 2px 6px black;
+  border: none;
+  background-color:rgb(219, 236, 255) ;
 }
 .plusMinus
 {
   font-size: 1.5rem;
   width: 4vh;
-  box-shadow: 2px 2px 6px black;
-  /* background-color: rgb(207, 206, 207); */
+  box-shadow: 1px 1px 3px black;
+ background-color:  rgb(190, 225, 255);
+ border-radius: 5px;
+ border: none;
 
+}
+.plusMinus:hover{
+  cursor: pointer;
+  background-color: rgb(0, 100, 188);
+  color: white;
 }
