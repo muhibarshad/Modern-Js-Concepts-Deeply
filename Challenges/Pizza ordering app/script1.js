@@ -15,6 +15,7 @@ const cancelOrder = document.querySelector(".cancelOrder");
 const error = document.querySelector(".error");
 const pageOne = document.querySelector(".contanier");
 const pageTwo = document.querySelector(".contanier-new");
+let finalPrice = document.querySelector(".inner-total-price");
 const pricesPizza = [
   [600, 500, 350, 400, 320, 250],
   [800, 650, 550, 630, 720, 670],
@@ -107,8 +108,9 @@ orderNow.addEventListener("click", function () {
     //second page
     let table = document.querySelector(".tableOf2nd-new");
     let html = "";
+    let totalPrice = 0;
     html = "";
-    for (const {
+    for (let {
       namePizza,
       sizePizza,
       pricePizza,
@@ -118,16 +120,30 @@ orderNow.addEventListener("click", function () {
   <tr>
     <td>${namePizza}</td>
     <td>${sizePizza}</td>
-    <td><input type="number" name="" class="NO-new" value=${noOfpizza} /></td>
+    <td><button class="NO_OF_PIZZA">
+      ${noOfpizza}
+    </button>
+    <button class="plusMinus  plus">
+      +
+    </button>
+    <button class="plusMinus  minus">
+      -
+    </button></td>
     <td>${pricePizza}</td>
   </tr>
   </table>`;
+      function change(num) {
+        console.log(num);
+        // return pricePizza*=num;
+      }
+      totalPrice += pricePizza;
     }
     table.innerHTML = html;
     CurrentPersonOrders = [];
-    initial();
     pageOne.classList.add("hidden");
     pageTwo.classList.remove("hidden");
+    finalPrice.innerText = totalPrice;
+    initial();
   }
 });
 //cancelOrder
@@ -135,7 +151,6 @@ cancelOrder.addEventListener("click", function () {
   initial();
   CurrentPersonOrders = [];
 });
-
 
 /*Second page*/
 
@@ -182,11 +197,14 @@ confirm.addEventListener("click", function () {
   }
 });
 
+const changeNo = document.querySelectorAll(".NO-new");
+for (const item of changeNo) {
+  item.addEventListener("change", function () {
+    console.log(this.value);
+  });
+}
 
-
-
-
-
+//calculate the price on no changing
 
 /*********************PESUDOCODE REMAINING FUNCTIONS*************************/
 /*Oredr page script*/

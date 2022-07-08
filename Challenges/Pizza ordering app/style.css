@@ -313,7 +313,7 @@ table {
 .col-1-t-new {
   font-size: 1.3rem;
 }
-.col-1-t-new h2 {
+.inner-total-price{
   padding-top: 1rem;
   font-size: 4rem;
 }
@@ -333,4 +333,17 @@ table {
 .btn-new:hover {
   transform: scale(1.04);
   cursor: pointer;
+}
+.NO_OF_PIZZA{
+  height: 3.7vh;
+  width: 7vh;
+  box-shadow: 2px 2px 6px black;
+}
+.plusMinus
+{
+  font-size: 1.5rem;
+  width: 4vh;
+  box-shadow: 2px 2px 6px black;
+  /* background-color: rgb(207, 206, 207); */
+
 }
