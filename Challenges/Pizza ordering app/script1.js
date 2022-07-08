@@ -42,7 +42,9 @@ const deafultSelection = function () {
 const defaultStarter = function () {
   sizeMenu[2].style.backgroundColor = "green";
 };
-
+const tester= function(){
+  console.log('ali');
+};
 //default starters
 defaultStarter();
 
@@ -123,7 +125,7 @@ orderNow.addEventListener("click", function () {
     <td><button class="NO_OF_PIZZA">
       ${noOfpizza}
     </button>
-    <button class="plusMinus  plus">
+    <button class="plusMinus  plus " onClick="tester()">
       +
     </button>
     <button class="plusMinus  minus">
@@ -221,6 +223,7 @@ const plus=document.querySelector('.plus');
 const minus=document.querySelector('.minus');
 let NO_OF_PIZZA=document.querySelector('.NO_OF_PIZZA');
 plus.addEventListener('click',function(){
-  let  pizzaCount=Number(NO_OF_PIZZA.innerText);
+  let  pizzaCount=1;
   console.log(pizzaCount);
 })
+
