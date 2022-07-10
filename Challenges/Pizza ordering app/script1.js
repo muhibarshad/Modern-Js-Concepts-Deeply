@@ -99,7 +99,6 @@ ok.addEventListener("click", function () {
   error.classList.contains("hidden") || error.classList.add("hidden");
 });
 //orderNow
-let flag1 = false;
 orderNow.addEventListener("click", function () {
   if (CurrentPersonOrders.length === 0) {
     error.classList.remove("hidden");
@@ -116,9 +115,6 @@ orderNow.addEventListener("click", function () {
       pricePizza,
       noOfpizza,
     } of CurrentPersonOrders) {
-      const tester = function () {
-        console.log("ali");
-      };
       html += `<table class="table2">
   <tr>
     <td>${namePizza}</td>
@@ -126,7 +122,7 @@ orderNow.addEventListener("click", function () {
     <td><button class="NO_OF_PIZZA">
       ${noOfpizza}
     </button>
-    <button class="plusMinus  plus ">
+    <button class="plusMinus  plus onClick="change(this.id)"">
       +
     </button>
     <button class="plusMinus  minus">
@@ -136,8 +132,6 @@ orderNow.addEventListener("click", function () {
   </tr>
   </table>`;
       totalPrice += pricePizza;
-      flag1=true;
-      console.log(flag1);
     }
     table.innerHTML = html;
     CurrentPersonOrders = [];
@@ -198,12 +192,7 @@ confirm.addEventListener("click", function () {
   }
 });
 
-const changeNo = document.querySelectorAll(".NO-new");
-for (const item of changeNo) {
-  item.addEventListener("change", function () {
-    console.log(this.value);
-  });
-}
+
 
 //calculate the price on no changing
 
@@ -219,6 +208,3 @@ for (const item of changeNo) {
 //page also includes all the details
 //on payment display the dialog box of all the details
 //incudding date /time/cash delivered/person details/pizzadetails
-
-//changing price on button click;
-console.log(flag1);
