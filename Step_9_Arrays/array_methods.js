@@ -3,23 +3,27 @@
 =================================
            Arrays Methods
 =================================
- We should have some methods on teh arrays as on strings but some diference between them.
- The main difference that always be rememberable is the mutating or non-mutating the arrays.
- To clearify the method ,use the """mdn arrays (meyhodName)""" very helpful.
+>>>>>>>>Concept:
+    Arrays has methods ,just like means any function
+    in the object is called method .So just when we call any method on the object.to conclude that
+    arrays are also objects and having more many built in methods.
+    We should have some methods on teh arrays as on strings but some diference between them.
+    The main difference that always be rememberable is the mutating or non-mutating the arrays.
+    To clearify the method ,use the """mdn arrays (meyhodName)""" very helpful.
 >>>>>Some common important methods are here.
-  arr.slice(startingIndex,endingIndex-1);(Slice method never mutate the original array)
-  arr.splice(startingIndex,countOfIndexExtracted);(Splice method always mutate the original array)
-  arr.reverse();(always mutate the original array)
-  arr.concate(arr2);(does not mutate the original array)
-  arr.join('  ');(give the string with joining string ,does not mutate the arary )
-  arr.at(positionOfindex);(same as arr[0] or arr.at(0) but this is a method way)
+    arr.slice(startingIndex,endingIndex-1);(Slice method never mutate the original array)
+    arr.splice(startingIndex,countOfIndexExtracted);(Splice method always mutate the original array)
+    arr.reverse();(always mutate the original array)
+    arr.concate(arr2);(does not mutate the original array)
+    arr.join('  ');(give the string with joining string ,does not mutate the arary )
+    arr.at(positionOfindex);(same as arr[0] or arr.at(0) but this is a method way)
 >>>>>Some methods you already know
-  arr.push();
-  arr.pop();
-  arr.on shift();
-  arr.shift();
-  arr.includes();
-  arr.indexOf();
+    arr.push();
+    arr.pop();
+    arr.on shift();
+    arr.shift();
+    arr.includes();
+    arr.indexOf();
 */
 
 //SLICE
