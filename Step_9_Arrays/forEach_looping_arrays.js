@@ -29,14 +29,10 @@ for (const [index, movement] of movements.entries()) {
     console.log(`${index + 1} You have withdraw ${Math.abs(movement)} .`);
 }
 
-
 console.log("--FOR-EACH--");
 movements.forEach(function (movement, index, arr) {
-    movement===movements.at(-1)
-    ? console.log(`Your entire account details is here
-    ${arr.join('\n')}`)
-    : movement > 0 &&
-      console.log(`${index + 1} You have deposited ${movement} .`);
-      movement < 0 && 
-      console.log(`${index + 1} You have withdraw ${movement} .`);
+  movement > 0 && console.log(`${index + 1} You have deposited ${movement} .`);
+  movement < 0 && console.log(`${index + 1} You have withdraw ${movement} .`);
+  movement === arr.at(-1) &&
+    console.log(`Your entire account details is here ${arr.join("\n")}`);
 });
