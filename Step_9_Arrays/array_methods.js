@@ -12,6 +12,7 @@
   arr.reverse();(always mutate the original array)
   arr.concate(arr2);(does not mutate the original array)
   arr.join('  ');(give the string with joining string ,does not mutate the arary )
+  arr.at(positionOfindex);(same as arr[0] or arr.at(0) but this is a method way)
 >>>>>Some methods you already know
   arr.push();
   arr.pop();
@@ -48,3 +49,12 @@ const monthsName=arr.concat(arr2);
 console.log(monthsName);
 //another method we already know
 console.log([...arr,...arr2]);
+
+
+//At
+console.log(monthsName[0]);
+console.log(monthsName.at(0));
+//useful as:(to get the last element of the array)
+console.log(monthsName[monthsName.length-1]);
+console.log(monthsName.slice(-1)[0]);//because the slice method sopy the array and make new array 
+console.log(monthsName.at(-1));//so simple to get the last element 
