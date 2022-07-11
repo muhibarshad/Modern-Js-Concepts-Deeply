@@ -18,6 +18,10 @@ Difference:
     as the first argument passing the callBack function is always the value of the element array 
     and second argument is always the index of the element array.(Additional:And the third is the
     entire array which is looping )
+forEach on Maps and Sets:
+    Maps has key ,value and sets have the unique values .
+    In sets ,major point is that they have no any key value so we may use the 
+    throwaway variable instead of it .    
 */
 
 //FOR-OF
@@ -29,6 +33,7 @@ for (const [index, movement] of movements.entries()) {
     console.log(`${index + 1} You have withdraw ${Math.abs(movement)} .`);
 }
 
+//FOR-EACH
 console.log("--FOR-EACH--");
 movements.forEach(function (movement, index, arr) {
   movement > 0 && console.log(`${index + 1} You have deposited ${movement} .`);
@@ -37,6 +42,23 @@ movements.forEach(function (movement, index, arr) {
     console.log(`Your entire account details is here ${arr.join("\n")}`);
 });
 
+//MAPS
+const data=new Map([
+   ['name','Muhib arshad'],
+   [true,'Yes he is the CR of the class'],
+   [1,'On this stage he learning JS']
+]);
+data.forEach(function(value,key,map){
+   console.log(`${key} = ${value}`);
+});
+
+
+//SETS
+const applicants=new Set(['Muhib','Ali','Bilal','Ali','hamza','Muhib']);
+applicants.forEach(function(value,_,set){
+    console.log(`${_} = ${value}`);//the key and value are same beacuse no index in sets
+ });
+ 
 
 //On every exectuation of the forEach loop the index elemnet is passend as 
 // 0:200
