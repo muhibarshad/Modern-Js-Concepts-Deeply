@@ -52,14 +52,12 @@ data.forEach(function(value,key,map){
    console.log(`${key} = ${value}`);
 });
 
-
 //SETS
 const applicants=new Set(['Muhib','Ali','Bilal','Ali','hamza','Muhib']);
 applicants.forEach(function(value,_,set){
     console.log(`${_} = ${value}`);//the key and value are same beacuse no index in sets
  });
  
-
 //On every exectuation of the forEach loop the index elemnet is passend as 
 // 0:200
 //1:900
