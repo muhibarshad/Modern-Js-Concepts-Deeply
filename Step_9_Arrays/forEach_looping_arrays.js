@@ -36,3 +36,11 @@ movements.forEach(function (movement, index, arr) {
   movement === arr.at(-1) &&
     console.log(`Your entire account details is here ${arr.join("\n")}`);
 });
+
+
+//On every exectuation of the forEach loop the index elemnet is passend as 
+// 0:200
+//1:900
+//...ans so On 
+//this means on each iteration the higher order forEach function callBack the 
+//argumentative function
