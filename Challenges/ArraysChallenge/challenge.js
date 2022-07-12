@@ -24,3 +24,7 @@ const checkDogs=function(corrected){
 }
 
 checkDogs(correctedData);
+
+
+
+//streak ko bachana par rha ahi 
