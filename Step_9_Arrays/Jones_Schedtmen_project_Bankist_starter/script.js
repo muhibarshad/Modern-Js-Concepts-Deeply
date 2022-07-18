@@ -86,7 +86,7 @@ const displayMovements = function (movements) {
       <div class="movements__type movements__type--${typeMov}">${
       i + 1
     } ${typeMov}</div>
-      <div class="movements__value">${mov}</div>
+      <div class="movements__value">${mov}€</div>
     </div>`;
     containerMovements.insertAdjacentHTML('afterbegin', html);
   });
@@ -108,7 +108,29 @@ console.log(accounts);
 
 //calculate the balance
 const calcDisplayBalance = function (movements) {
- const balance= movements.reduce((acc, mov) => acc + mov, 0);
- labelBalance.innerHTML=`${balance} EUR`;
+  const balance = movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${balance}€`;
 };
 calcDisplayBalance(account1.movements);
+
+/*incomes,outcomes,interest->Display*/
+const calDisplaySummary = function (movements) {
+  //income
+  const income = movements
+    .filter(mov => mov > 0)
+    .reduce((acc, mov) => acc + mov, 0);
+  labelSumIn.textContent = `${income}€`;
+  //outcome
+  const outcome = movements
+    .filter(mov => mov < 0)
+    .reduce((acc, mov) => acc + mov, 0);
+  labelSumOut.textContent = `${Math.abs(outcome)}€`;
+  //interst
+  const interest = movements
+    .filter(mov => mov > 0)
+    .map(deposit => deposit * (1.2 / 100))
+    .filter(deposit => deposit>=1)//if he/she deposit greater than 1 EURO so he/she gets the interest
+    .reduce((int, mov) => int + mov, 0);
+  labelSumInterest.textContent=`${interest}€`;
+};
+calDisplaySummary(account1.movements);

@@ -29,3 +29,8 @@
   >The  first argument of the callback functionis always the accamulator.That can be updated on every callback function returns.
   >We can also specify the second argument as the starting point from where the accmulator can start by giving its position .
   For example see the [Reduce Example](/Step_9_Arrays/reduceMethod.js)
+
+### Chaining Methods
+  The chaining methods are  simple as apply all the map,filter and reduce methods together and avoid to make the new varaibles.
+  For better understanding see the ***Income,Outcome,Interest*** part in the [Bankist-App](/Step_9_Arrays/Jones_Schedtmen_project_Bankist_starter/script.js) or see the more better and simple
+  understanding see the [Chaining-methods](/Step_9_Arrays/chainingMethods.js).
