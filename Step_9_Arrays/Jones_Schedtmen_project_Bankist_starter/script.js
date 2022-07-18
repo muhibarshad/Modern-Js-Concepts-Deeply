@@ -94,7 +94,6 @@ const displayMovements = function (movements) {
 displayMovements(account1.movements);
 
 //computing the userNames
-
 const createUserName = function (accs) {
   accs.forEach(function (acc) {
     acc.userName = acc.owner
@@ -106,3 +105,10 @@ const createUserName = function (accs) {
 };
 createUserName(accounts);
 console.log(accounts);
+
+//calculate the balance
+const calcDisplayBalance = function (movements) {
+ const balance= movements.reduce((acc, mov) => acc + mov, 0);
+ labelBalance.innerHTML=`${balance} EUR`;
+};
+calcDisplayBalance(account1.movements);
