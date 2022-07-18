@@ -8,6 +8,7 @@
   - [Map_Method](#map-method)
   - [Filter_Method](#filter-method)
   - [Reduce_Method](#reduce-method)
+  - [Find_Method](#find-method)
 
 ## Map Method
  Map method is same as the forEach method but it return expressions and statements in the new array for 
@@ -30,6 +31,13 @@
   >We can also specify the second argument as the starting point from where the accmulator can start by giving its position .
   For example see the [Reduce Example](/Step_9_Arrays/reduceMethod.js)
 
+## Find Method
+  Find method is very similar to reduce method.Because it takes the some boolean value and return the 
+  statement according to it if it is true.Same as Find method it takes the boolean value
+  but it returns the only first statement that matches in the array first.
+  >Note:
+  >The major differece between the find method and the filter method is that ,filter method returns the new array but the find method only returns the single value.
+  For example see the [Find Example](/Step_9_Arrays/findMethod.js)
 ### Chaining Methods
   The chaining methods are  simple as apply all the map,filter and reduce methods together and avoid to make the new varaibles.
   For better understanding see the ***Income,Outcome,Interest*** part in the [Bankist-App](/Step_9_Arrays/Jones_Schedtmen_project_Bankist_starter/script.js) or see the more better and simple
