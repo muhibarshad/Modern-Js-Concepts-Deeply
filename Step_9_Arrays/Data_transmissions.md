@@ -1,44 +1,79 @@
 # Data Transmissions
-  Data Transmissions are the ways of looping the arrays.We know that the forEach method in the arrays .
-  These methods are same as forEcah methods.But the major difference is forEach method is only use to 
-  looping over the arrays.But the data transmissions are returning the array contaning what we return 
-  on each callBack of the index function.This is the more better way to write the cleaner code as the 
-  funtional programming instead of writing the old for of looping ways.
-  There are three methods of data transmissions:
-  - [Map_Method](#map-method)
-  - [Filter_Method](#filter-method)
-  - [Reduce_Method](#reduce-method)
-  - [Find_Method](#find-method)
+
+Data Transmissions are the ways of looping the arrays.We know that the forEach method in the arrays .
+These methods are same as forEcah methods.But the major difference is forEach method is only use to
+looping over the arrays.But the data transmissions are returning the array contaning what we return
+on each callBack of the index function.This is the more better way to write the cleaner code as the
+funtional programming instead of writing the old for of looping ways.
+There are three methods of data transmissions:
+
+- [Map_Method](#map-method)
+- [Filter_Method](#filter-method)
+- [Reduce_Method](#reduce-method)
+- [Find_Method](#find-method)
+- [FindIndex_Method](#findindex-method)
 
 ## Map Method
- Map method is same as the forEach method but it return expressions and statements in the new array for 
- each index .We can apply the mathematical conversions and return the the statements in the new array.
- Use the arrow functions as the callback function.
- For example see the [Map example](/Step_9_Arrays/mapMethod.js)
+
+Map method is same as the forEach method but it return expressions and statements in the new array for
+each index .We can apply the mathematical conversions and return the the statements in the new array.
+Use the arrow functions as the callback function.
+For example see the [Map example](/Step_9_Arrays/mapMethod.js)
 
 ## Filter Method
-  Filter according to its name it is filtering .So it can make the new array by filtering the 
-  array on which this method is applying .Filtering is done as ,operators and ,if/else satements
-  or many more methods.Use the Arrow functions as the callBack functions.
-  for example see the [Filter Example](/Step_9_Arrays/filterMethod.js)
+
+Filter according to its name it is filtering .So it can make the new array by filtering the
+array on which this method is applying .Filtering is done as ,operators and ,if/else satements
+or many more methods.Use the Arrow functions as the callBack functions.
+for example see the [Filter Example](/Step_9_Arrays/filterMethod.js)
 
 ## Reduce Method
-  Reduced method return only the single value.After doing the some manipulation on the whole
-  array.Its like a snowBoll who is running over the entire array starting from the 0 index to last index.
-  and return the maipulated value.We can apply the multiplication,addition,subtraction ,division,
-  max and min find also.
-  >The  first argument of the callback functionis always the accamulator.That can be updated on every callback function returns.
-  >We can also specify the second argument as the starting point from where the accmulator can start by giving its position .
-  For example see the [Reduce Example](/Step_9_Arrays/reduceMethod.js)
+
+Reduced method return only the single value.After doing the some manipulation on the whole
+array.Its like a snowBoll who is running over the entire array starting from the 0 index to last index.
+and return the maipulated value.We can apply the multiplication,addition,subtraction ,division,
+max and min find also.
+
+> The first argument of the callback functionis always the accamulator.That can be updated on every callback function returns.
+> We can also specify the second argument as the starting point from where the accmulator can start by giving its position .
+> For example see the [Reduce Example](/Step_9_Arrays/reduceMethod.js)
 
 ## Find Method
-  Find method is very similar to reduce method.Because it takes the some boolean value and return the 
-  statement according to it if it is true.Same as Find method it takes the boolean value
-  but it returns the only first statement that matches in the array first.
-  >Note:
-  >The major differece between the find method and the filter method is that ,filter method returns the new array but the find method only returns the single value.
-  For example see the [Find Example](/Step_9_Arrays/findMethod.js)
+
+Find method is very similar to reduce method.Because it takes the some boolean value and return the
+statement according to it if it is true.Same as Find method it takes the boolean value
+but it returns the only first statement that matches in the array first.
+
+> Note:
+> The major differece between the find method and the filter method is that ,filter method returns the new array but the find method only returns the single value.
+> For example see the [Find Example](/Step_9_Arrays/findMethod.js)
+
 ### Chaining Methods
-  The chaining methods are  simple as apply all the map,filter and reduce methods together and avoid to make the new varaibles.
-  For better understanding see the ***Income,Outcome,Interest*** part in the [Bankist-App](/Step_9_Arrays/Jones_Schedtmen_project_Bankist_starter/script.js) or see the more better and simple
-  understanding see the [Chaining-methods](/Step_9_Arrays/chainingMethods.js).
+
+The chaining methods are simple as apply all the map,filter and reduce methods together and avoid to make the new varaibles.
+For better understanding see the **_Income,Outcome,Interest_** part in the [Bankist-App](/Step_9_Arrays/Jones_Schedtmen_project_Bankist_starter/script.js) or see the more better and simple
+understanding see the [Chaining-methods](/Step_9_Arrays/chainingMethods.js).
+
+### FindIndex Method
+
+    Find index method is the cousion of th efind method😁.Beacuse it can actually work same as th find method. In find method we get first value of the array on which the codition satisfies, but findIndex method we should get the `index` of that value except the value.
+  To see the exapmle see the [Find Index ](/Step_9_Arrays/findIndex.js).
+
+### Some Method
+
+    Firstly we have to understand the includes method.In includes method we return the `false or true` if
+    the given value exist in tha array or not.
+```
+   const movements=[100,800,600,-500,-300,1000,-200];
+   console.log(movements.includes(-300));//true
+   console.log(movements.includes(-90000));//false
+   
+```
+   The drawBack of includes method is that ,we cannot apply the condition to get the specific that value
+   on which the condition satisfies.Let Introduce the ***SOME*** method on that returns if the value exist or satisfies the condition .
+   To see the example see the `Request Laon` part in the [Bankist-app](/Step_9_Arrays/Jones_Schedtmen_project_Bankist_starter/script.js)
+
+### Every Method
+    Every method is the brother of the Some method.According to its name ,it returns true or false 
+    only if all the elemenst in the array satisfies the condition.
+    
