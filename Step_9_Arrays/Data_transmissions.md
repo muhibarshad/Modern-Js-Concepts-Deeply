@@ -58,13 +58,13 @@ The chaining methods are simple as apply all the map,filter and reduce methods t
 For better understanding see the **_Income,Outcome,Interest_** part in the [Bankist-App](/Step_9_Arrays/Jones_Schedtmen_project_Bankist_starter/script.js) or see the more better and simple
 understanding see the [Chaining-methods](/Step_9_Arrays/chainingMethods.js).
 
-### FindIndex Method
+## FindIndex Method
 
 Find index method is the cousion of th efind method😁.Beacuse it can actually work same as th find method. In find method we get first value of the array on which the codition satisfies, but findIndex method we should get the `index` of that value except the value.
 
 To see the exapmle see the [Find Index ](/Step_9_Arrays/findIndex.js).
 
-### Some Method
+## Some Method
 
 Firstly we have to understand the includes method.In includes method we return the `false or true` if
 the given value exist in tha array or not.
@@ -80,26 +80,26 @@ The drawBack of includes method is that ,we cannot apply the condition to get th
 on which the condition satisfies.Let Introduce the **_SOME_** method on that returns if the value exist or satisfies the condition .
 To see the example see the `Request Laon` part in the [Bankist-app](/Step_9_Arrays/Jones_Schedtmen_project_Bankist_starter/script.js)
 
-### Every Method
+## Every Method
 
 Every method is the brother of the Some method.According to its name ,it returns true or false
 only if all the elemenst in the array satisfies the condition.
 
-### Falt and flatmap Methods
+## Falt and flatmap Methods
 
-#### Flat
+### Flat
 
 In Simple word to get the nested arrays into one single array we use the flat methods.
 To go deeper and deeper nested array has thietr own nested arrays pass the parameter.
 **1** as a default one nested deeper and 2 for the 2 times deeper arrays deeper .
 
-#### FaltMap
+### FaltMap
 
 We can basically use the flat and map methods together in most cases .So in ES2019 it was also introduce the flatMAp method to use both methods in the one method.
 
 For the example see the [Flat and FlatMap Example](/Step_9_Arrays/flat_and_flatMap_methods.js)
 
-### Sort Method
+## Sort Method
 
 Sort method can actually sort the strings.And also sort the numbers but in a string way not numerical way.Sorting can mutate the original array.
 
