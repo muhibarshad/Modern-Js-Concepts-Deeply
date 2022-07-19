@@ -105,9 +105,9 @@ const createUserName = function (accs) {
 createUserName(accounts);
 
 //calculate the balance
-const calcDisplayBalance = function (movements) {
-  const balance = movements.reduce((acc, mov) => acc + mov, 0);
-  labelBalance.textContent = `${balance}€`;
+const calcDisplayBalance = function (acc) {
+  acc.balance = acc.movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${acc.balance}€`;
 };
 
 /*incomes,outcomes,interest->Display*/
@@ -131,24 +131,47 @@ const calDisplaySummary = function (acc) {
   labelSumInterest.textContent = `${interest}€`;
 };
 
+const updateUI = function (acc) {
+  displayMovements(acc.movements);
+  calcDisplayBalance(acc);
+  calDisplaySummary(acc);
+};
+
 //Login_In------Activity
 let currentUser;
 btnLogin.addEventListener('click', function (e) {
-
   e.preventDefault();
   currentUser = accounts.find(acc => acc.userName === inputLoginUsername.value);
 
   if (currentUser?.pin === Number(inputLoginPin.value)) {
-
     containerApp.style.opacity = 100;
     labelWelcome.textContent = `Welcome ,${currentUser.owner.split(' ')[0]}`;
 
     inputLoginUsername.value = inputLoginPin.value = '';
     inputLoginPin.blur();
 
-    displayMovements(currentUser.movements);
-    calcDisplayBalance(currentUser.movements);
-    calDisplaySummary(currentUser);
-    
+    updateUI(currentUser);
   }
 });
+
+//Transfering_Money------Activity
+btnTransfer.addEventListener('click', function (e) {
+  e.preventDefault();
+  let amount = Number(inputTransferAmount.value);
+  let recevierAcc = accounts.find(
+    acc => acc.userName === inputTransferTo.value
+  );
+  inputTransferAmount.value = inputTransferTo.value = '';
+  inputLoanAmount.blur();
+  if (
+    amount > 0 &&
+    amount <= currentUser.balance &&
+    recevierAcc?.userName !== currentUser.userName &&
+    recevierAcc
+  ) {
+    recevierAcc.movements.push(amount);
+    currentUser.movements.push(-amount);
+    updateUI(currentUser);
+  }
+});
+
