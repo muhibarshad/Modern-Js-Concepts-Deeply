@@ -12,6 +12,9 @@ There are three methods of data transmissions:
 - [Reduce_Method](#reduce-method)
 - [Find_Method](#find-method)
 - [FindIndex_Method](#findindex-method)
+- [Some_Method](#some-method)
+- [Every_Method](#every-method)
+- [Flat_and_FlatMap_Methods](#falt-and-flatmap-methods)
 
 ## Map Method
 
@@ -77,3 +80,13 @@ understanding see the [Chaining-methods](/Step_9_Arrays/chainingMethods.js).
     Every method is the brother of the Some method.According to its name ,it returns true or false 
     only if all the elemenst in the array satisfies the condition.
     
+### Falt and flatmap Methods
+   #### Flat
+    In Simple word to get the nested arrays into one single array we use the flat methods.
+    To go deeper and deeper nested array has thietr own nested arrays pass the parameter.
+    **1** as a default one nested deeper and 2 for the 2 times deeper arrays deeper .
+  #### FaltMap
+     We can basically use the flat and map methods together in most cases .So in ES2019 it was also introduce the flatMAp method to use both methods in the one method.
+
+For the example see the [Flat and FlatMap Example](/Step_9_Arrays/flat_and_flatMap_methods.js)
+
