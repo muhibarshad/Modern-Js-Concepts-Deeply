@@ -134,3 +134,5 @@ const calDisplaySummary = function (movements) {
   labelSumInterest.textContent=`${interest}€`;
 };
 calDisplaySummary(account1.movements);
+
+//logIn->Activity
