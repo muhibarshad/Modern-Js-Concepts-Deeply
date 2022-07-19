@@ -77,10 +77,11 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /*My code start here*/
 
-//display the transictions
-const displayMovements = function (movements) {
+//Display the Movements
+const displayMovements = function (acc, sort = false) {
   containerMovements.innerHTML = '';
-  movements.forEach(function (mov, i) {
+  let movs = sort ? acc.movements.slice().sort((a, b) => a - b) : acc.movements;
+  movs.forEach(function (mov, i) {
     const typeMov = mov > 0 ? 'deposit' : 'withdrawal';
     let html = `<div class="movements__row">
       <div class="movements__type movements__type--${typeMov}">${
@@ -132,7 +133,7 @@ const calDisplaySummary = function (acc) {
 };
 
 const updateUI = function (acc) {
-  displayMovements(acc.movements);
+  displayMovements(acc);
   calcDisplayBalance(acc);
   calDisplaySummary(acc);
 };
@@ -156,7 +157,6 @@ btnLogin.addEventListener('click', function (e) {
 
 //Transfering_Money------Activity
 btnTransfer.addEventListener('click', function (e) {
-
   e.preventDefault();
   let amount = Number(inputTransferAmount.value);
   let recevierAcc = accounts.find(
@@ -172,22 +172,18 @@ btnTransfer.addEventListener('click', function (e) {
     recevierAcc?.userName !== currentUser.userName &&
     recevierAcc
   ) {
-
     recevierAcc.movements.push(amount);
     currentUser.movements.push(-amount);
     updateUI(currentUser);
-    
   }
 });
 
 //Request_Loan------Activity
 btnLoan.addEventListener('click', function (e) {
-
   e.preventDefault();
   let amount = Number(inputLoanAmount.value);
   if (amount > 0 && currentUser.movements.some(mov => mov >= amount * 0.1)) {
-    
-    inputLoanAmount.value='';
+    inputLoanAmount.value = '';
     inputLoanAmount.blur();
 
     currentUser.movements.push(amount);
@@ -197,13 +193,11 @@ btnLoan.addEventListener('click', function (e) {
 
 //Closing_Account------Activity
 btnClose.addEventListener('click', function (e) {
-
   e.preventDefault();
   if (
     inputCloseUsername.value === currentUser.userName &&
     Number(inputClosePin.value) === currentUser.pin
   ) {
-
     inputClosePin.value = inputCloseUsername.value = '';
     containerApp.style.opacity = 0;
 
@@ -214,4 +208,10 @@ btnClose.addEventListener('click', function (e) {
   }
 });
 
-
+//Sort------Activity
+let sorted = false;
+btnSort.addEventListener('click', function (e) {
+  e.preventDefault();
+  displayMovements(currentUser, !sorted);
+  sorted = !sorted; //mutate the sorted
+});

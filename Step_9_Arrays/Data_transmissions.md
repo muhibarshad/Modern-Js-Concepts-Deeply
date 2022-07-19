@@ -154,4 +154,3 @@ This is the best way to  decending order sorting the array.
 rollNo.sort((a,b) => b-a);
 
 ```
-.
