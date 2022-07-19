@@ -80,15 +80,18 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 //Display the Movements
 const displayMovements = function (acc, sort = false) {
   containerMovements.innerHTML = '';
-  let movs = sort ? acc.movements.slice().sort((a, b) => a - b) : acc.movements;
+  let movs = sort ? acc.movements.slice().sort((a, b) => a - b) : acc.movements; //sort
+
   movs.forEach(function (mov, i) {
     const typeMov = mov > 0 ? 'deposit' : 'withdrawal';
+
     let html = `<div class="movements__row">
       <div class="movements__type movements__type--${typeMov}">${
       i + 1
     } ${typeMov}</div>
       <div class="movements__value">${mov}€</div>
     </div>`;
+
     containerMovements.insertAdjacentHTML('afterbegin', html);
   });
 };
