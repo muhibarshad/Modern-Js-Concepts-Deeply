@@ -175,3 +175,19 @@ btnTransfer.addEventListener('click', function (e) {
   }
 });
 
+//Closing_Account------Activity
+btnClose.addEventListener('click', function (e) {
+  e.preventDefault();
+  if (
+    inputCloseUsername.value === currentUser.userName &&
+    Number(inputClosePin.value) === currentUser.pin
+  ) {
+    inputClosePin.value=inputCloseUsername.value='';
+    inputClosePin.blur();
+    const index=accounts.findIndex(acc => acc.userName===currentUser.userName);
+    accounts.splice(index,1);
+    containerApp.style.opacity = 0;
+    console.log(accounts);
+  }
+});
+
