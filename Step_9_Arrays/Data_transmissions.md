@@ -66,8 +66,8 @@ To see the exapmle see the [Find Index ](/Step_9_Arrays/findIndex.js).
 
 ### Some Method
 
-    Firstly we have to understand the includes method.In includes method we return the `false or true` if
-    the given value exist in tha array or not.
+Firstly we have to understand the includes method.In includes method we return the `false or true` if
+the given value exist in tha array or not.
 
 ```js
 const movements=[100,800,600,-500,-300,1000,-200];
@@ -82,16 +82,16 @@ To see the example see the `Request Laon` part in the [Bankist-app](/Step_9_Arra
 
 ### Every Method
 
-    Every method is the brother of the Some method.According to its name ,it returns true or false
-    only if all the elemenst in the array satisfies the condition.
+Every method is the brother of the Some method.According to its name ,it returns true or false
+only if all the elemenst in the array satisfies the condition.
 
 ### Falt and flatmap Methods
 
 #### Flat
 
-    In Simple word to get the nested arrays into one single array we use the flat methods.
-    To go deeper and deeper nested array has thietr own nested arrays pass the parameter.
-    **1** as a default one nested deeper and 2 for the 2 times deeper arrays deeper .
+In Simple word to get the nested arrays into one single array we use the flat methods.
+To go deeper and deeper nested array has thietr own nested arrays pass the parameter.
+**1** as a default one nested deeper and 2 for the 2 times deeper arrays deeper .
 
 #### FaltMap
 
