@@ -95,7 +95,7 @@ To go deeper and deeper nested array has thietr own nested arrays pass the param
 
 #### FaltMap
 
-     We can basically use the flat and map methods together in most cases .So in ES2019 it was also introduce the flatMAp method to use both methods in the one method.
+    We can basically use the flat and map methods together in most cases .So in ES2019 it was also introduce the flatMAp method to use both methods in the one method.
 
 For the example see the [Flat and FlatMap Example](/Step_9_Arrays/flat_and_flatMap_methods.js)
 
