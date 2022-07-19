@@ -60,7 +60,7 @@ understanding see the [Chaining-methods](/Step_9_Arrays/chainingMethods.js).
 
 ### FindIndex Method
 
-    Find index method is the cousion of th efind method😁.Beacuse it can actually work same as th find method. In find method we get first value of the array on which the codition satisfies, but findIndex method we should get the `index` of that value except the value.
+Find index method is the cousion of th efind method😁.Beacuse it can actually work same as th find method. In find method we get first value of the array on which the codition satisfies, but findIndex method we should get the `index` of that value except the value.
 
 To see the exapmle see the [Find Index ](/Step_9_Arrays/findIndex.js).
 
