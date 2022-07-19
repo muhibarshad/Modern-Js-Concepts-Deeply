@@ -15,6 +15,7 @@ There are three methods of data transmissions:
 - [Some_Method](#some-method)
 - [Every_Method](#every-method)
 - [Flat_and_FlatMap_Methods](#falt-and-flatmap-methods)
+- [Sort_Method](#sort-method)
 
 ## Map Method
 
@@ -60,33 +61,97 @@ understanding see the [Chaining-methods](/Step_9_Arrays/chainingMethods.js).
 ### FindIndex Method
 
     Find index method is the cousion of th efind method😁.Beacuse it can actually work same as th find method. In find method we get first value of the array on which the codition satisfies, but findIndex method we should get the `index` of that value except the value.
-  To see the exapmle see the [Find Index ](/Step_9_Arrays/findIndex.js).
+
+To see the exapmle see the [Find Index ](/Step_9_Arrays/findIndex.js).
 
 ### Some Method
 
     Firstly we have to understand the includes method.In includes method we return the `false or true` if
     the given value exist in tha array or not.
+
 ```
-   const movements=[100,800,600,-500,-300,1000,-200];
-   console.log(movements.includes(-300));//true
-   console.log(movements.includes(-90000));//false
-   
+const movements=[100,800,600,-500,-300,1000,-200];
+console.log(movements.includes(-300));//true
+console.log(movements.includes(-90000));//false
+
 ```
-   The drawBack of includes method is that ,we cannot apply the condition to get the specific that value
-   on which the condition satisfies.Let Introduce the ***SOME*** method on that returns if the value exist or satisfies the condition .
-   To see the example see the `Request Laon` part in the [Bankist-app](/Step_9_Arrays/Jones_Schedtmen_project_Bankist_starter/script.js)
+
+The drawBack of includes method is that ,we cannot apply the condition to get the specific that value
+on which the condition satisfies.Let Introduce the **_SOME_** method on that returns if the value exist or satisfies the condition .
+To see the example see the `Request Laon` part in the [Bankist-app](/Step_9_Arrays/Jones_Schedtmen_project_Bankist_starter/script.js)
 
 ### Every Method
-    Every method is the brother of the Some method.According to its name ,it returns true or false 
+
+    Every method is the brother of the Some method.According to its name ,it returns true or false
     only if all the elemenst in the array satisfies the condition.
-    
+
 ### Falt and flatmap Methods
-   #### Flat
+
+#### Flat
+
     In Simple word to get the nested arrays into one single array we use the flat methods.
     To go deeper and deeper nested array has thietr own nested arrays pass the parameter.
     **1** as a default one nested deeper and 2 for the 2 times deeper arrays deeper .
-  #### FaltMap
+
+#### FaltMap
+
      We can basically use the flat and map methods together in most cases .So in ES2019 it was also introduce the flatMAp method to use both methods in the one method.
 
 For the example see the [Flat and FlatMap Example](/Step_9_Arrays/flat_and_flatMap_methods.js)
 
+### Sort Method
+
+Sort method can actually sort the strings.And also sort the numbers but in a string way not numerical way.Sorting can mutate the original array.
+
+```
+const students=['Muhib','Ali','Hamza','Zariab','Bilal'];
+console.log(students.sort());//sort the students array
+const rollNo=[40,1,9,70,34,22];
+console.log(rollNo.sort());//does not sort the array
+
+```
+
+##### To solve this problem
+
+Suppose we have an array like this
+
+```
+const rollNo=[40,1,9,70,34,22];
+
+```
+
+we can pas the arrow function in the sort method
+
+
+This is the acending order sorting the array.
+```
+rollNo.sort((a,b)=>{
+   if(a>b) return 1;
+   if(a<b) return -1;
+})
+
+```
+Logic behind is that if a > b then return true means chnge the `a,b as b,a ` then if a< b then do not change the position .And it loops over the array array.lenghth times and every callback the largest element goes to the end of the array.And In second iteration the second largest element goes to its 2nd last position.go and go on and then finally we get the sorted array.
+
+This is the decending order sorting the array.
+```
+rollNo.sort((a,b)=>{
+   if(a>b) return -1;
+   if(a<b) return 1;
+})
+
+```
+Now ,the thing we notice is that if a>b then it returns the 1 means change it if we get the positive value.So we can also write as 
+
+This is the best way to  acending order sorting the array.
+```
+rollNo.sort((a,b) => a-b);
+
+```
+
+This is the best way to  decending order sorting the array.
+```
+rollNo.sort((a,b) => b-a);
+
+```
+.
