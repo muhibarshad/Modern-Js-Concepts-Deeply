@@ -91,7 +91,6 @@ const displayMovements = function (movements) {
     containerMovements.insertAdjacentHTML('afterbegin', html);
   });
 };
-displayMovements(account1.movements);
 
 //computing the userNames
 const createUserName = function (accs) {
@@ -104,35 +103,52 @@ const createUserName = function (accs) {
   });
 };
 createUserName(accounts);
-console.log(accounts);
 
 //calculate the balance
 const calcDisplayBalance = function (movements) {
   const balance = movements.reduce((acc, mov) => acc + mov, 0);
   labelBalance.textContent = `${balance}€`;
 };
-calcDisplayBalance(account1.movements);
 
 /*incomes,outcomes,interest->Display*/
-const calDisplaySummary = function (movements) {
+const calDisplaySummary = function (acc) {
   //income
-  const income = movements
+  const income = acc.movements
     .filter(mov => mov > 0)
     .reduce((acc, mov) => acc + mov, 0);
   labelSumIn.textContent = `${income}€`;
   //outcome
-  const outcome = movements
+  const outcome = acc.movements
     .filter(mov => mov < 0)
     .reduce((acc, mov) => acc + mov, 0);
   labelSumOut.textContent = `${Math.abs(outcome)}€`;
   //interst
-  const interest = movements
+  const interest = acc.movements
     .filter(mov => mov > 0)
-    .map(deposit => deposit * (1.2 / 100))
-    .filter(deposit => deposit>=1)//if he/she deposit greater than 1 EURO so he/she gets the interest
+    .map(deposit => deposit * (acc.interestRate / 100))
+    .filter(deposit => deposit >= 1) //if he/she deposit greater than 1 EURO so he/she gets the interest
     .reduce((int, mov) => int + mov, 0);
-  labelSumInterest.textContent=`${interest}€`;
+  labelSumInterest.textContent = `${interest}€`;
 };
-calDisplaySummary(account1.movements);
 
-//logIn->Activity
+//Login_In------Activity
+let currentUser;
+btnLogin.addEventListener('click', function (e) {
+
+  e.preventDefault();
+  currentUser = accounts.find(acc => acc.userName === inputLoginUsername.value);
+
+  if (currentUser?.pin === Number(inputLoginPin.value)) {
+
+    containerApp.style.opacity = 100;
+    labelWelcome.textContent = `Welcome ,${currentUser.owner.split(' ')[0]}`;
+
+    inputLoginUsername.value = inputLoginPin.value = '';
+    inputLoginPin.blur();
+
+    displayMovements(currentUser.movements);
+    calcDisplayBalance(currentUser.movements);
+    calDisplaySummary(currentUser);
+    
+  }
+});
