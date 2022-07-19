@@ -69,7 +69,7 @@ To see the exapmle see the [Find Index ](/Step_9_Arrays/findIndex.js).
     Firstly we have to understand the includes method.In includes method we return the `false or true` if
     the given value exist in tha array or not.
 
-```
+```js
 const movements=[100,800,600,-500,-300,1000,-200];
 console.log(movements.includes(-300));//true
 console.log(movements.includes(-90000));//false
