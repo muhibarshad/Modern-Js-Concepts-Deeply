@@ -156,39 +156,61 @@ btnLogin.addEventListener('click', function (e) {
 
 //Transfering_Money------Activity
 btnTransfer.addEventListener('click', function (e) {
+
   e.preventDefault();
   let amount = Number(inputTransferAmount.value);
   let recevierAcc = accounts.find(
     acc => acc.userName === inputTransferTo.value
   );
+
   inputTransferAmount.value = inputTransferTo.value = '';
   inputLoanAmount.blur();
+
   if (
     amount > 0 &&
     amount <= currentUser.balance &&
     recevierAcc?.userName !== currentUser.userName &&
     recevierAcc
   ) {
+
     recevierAcc.movements.push(amount);
     currentUser.movements.push(-amount);
+    updateUI(currentUser);
+    
+  }
+});
+
+//Request_Loan------Activity
+btnLoan.addEventListener('click', function (e) {
+
+  e.preventDefault();
+  let amount = Number(inputLoanAmount.value);
+  if (amount > 0 && currentUser.movements.some(mov => mov >= amount * 0.1)) {
+    
+    inputLoanAmount.value='';
+    inputLoanAmount.blur();
+
+    currentUser.movements.push(amount);
     updateUI(currentUser);
   }
 });
 
-
 //Closing_Account------Activity
 btnClose.addEventListener('click', function (e) {
+
   e.preventDefault();
   if (
     inputCloseUsername.value === currentUser.userName &&
     Number(inputClosePin.value) === currentUser.pin
   ) {
-    inputClosePin.value = inputCloseUsername.value = '';   
+
+    inputClosePin.value = inputCloseUsername.value = '';
+    containerApp.style.opacity = 0;
+
     const index = accounts.findIndex(
       acc => acc.userName === currentUser.userName
     );
     accounts.splice(index, 1);
-    containerApp.style.opacity = 0;
   }
 });
 
