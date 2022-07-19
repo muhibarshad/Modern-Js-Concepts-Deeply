@@ -103,7 +103,7 @@ For the example see the [Flat and FlatMap Example](/Step_9_Arrays/flat_and_flatM
 
 Sort method can actually sort the strings.And also sort the numbers but in a string way not numerical way.Sorting can mutate the original array.
 
-```
+```js
 const students=['Muhib','Ali','Hamza','Zariab','Bilal'];
 console.log(students.sort());//sort the students array
 const rollNo=[40,1,9,70,34,22];
@@ -115,7 +115,7 @@ console.log(rollNo.sort());//does not sort the array
 
 Suppose we have an array like this
 
-```
+```js
 const rollNo=[40,1,9,70,34,22];
 
 ```
@@ -124,7 +124,7 @@ we can pas the arrow function in the sort method
 
 
 This is the acending order sorting the array.
-```
+```js
 rollNo.sort((a,b)=>{
    if(a>b) return 1;
    if(a<b) return -1;
@@ -134,7 +134,7 @@ rollNo.sort((a,b)=>{
 Logic behind is that if a > b then return true means chnge the `a,b as b,a ` then if a< b then do not change the position .And it loops over the array array.lenghth times and every callback the largest element goes to the end of the array.And In second iteration the second largest element goes to its 2nd last position.go and go on and then finally we get the sorted array.
 
 This is the decending order sorting the array.
-```
+```js
 rollNo.sort((a,b)=>{
    if(a>b) return -1;
    if(a<b) return 1;
@@ -144,13 +144,13 @@ rollNo.sort((a,b)=>{
 Now ,the thing we notice is that if a>b then it returns the 1 means change it if we get the positive value.So we can also write as 
 
 This is the best way to  acending order sorting the array.
-```
+```js
 rollNo.sort((a,b) => a-b);
 
 ```
 
 This is the best way to  decending order sorting the array.
-```
+```js
 rollNo.sort((a,b) => b-a);
 
 ```
