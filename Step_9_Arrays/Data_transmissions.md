@@ -64,6 +64,36 @@ Find index method is the cousion of th efind method😁.Beacuse it can actually 
 
 To see the exapmle see the [Find Index ](/Step_9_Arrays/findIndex.js).
 
+---
+title: FindIndex Method
+tags: array
+expertise: advanced
+firstSeen: 2021-07-19 23:31:46-2:00
+---
+
+Suppose one of your application user want to delete its account.To find its index use findIndex method.
+
+- Use `Array.prototype.findIndex()` method to find its index in the accounts array.
+- `Array.prototype.findIndex()`returns index of first account having true condition in entire array.
+- Then use `Array.prototype.splice()` method to delete that account in the array.(mutate the original array)
+
+Data
+```js
+const account1={userName:'ks',pin:0000};
+const account2={userName:'am',pin:9999};
+let accounts=[account1,account2];
+```
+Functionality
+```js
+let currentUser=account2;
+const deleteAccount=function(accs){
+ const index = accs.findIndex(
+      acc => acc.userName === currentUser.userName
+    );
+    accs.splice(index, 1); 
+}
+```
+
 ## Some Method
 
 Firstly we have to understand the includes method.In includes method we return the `false or true` if
