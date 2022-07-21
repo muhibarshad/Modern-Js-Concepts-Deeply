@@ -65,14 +65,6 @@ Find index method is the cousion of th efind method😁.Beacuse it can actually 
 To see the exapmle see the [Find Index ](/Step_9_Arrays/findIndex.js).
 
 
----
-title: FindIndex Method
-tags: array
-expertise: advanced
-firstSeen: 2021-07-19 23:31:46-2:00
-
----
-
 Suppose one of your application user want to delete its account.To find its index use findIndex method.
 
 - Use `Array.prototype.findIndex()` method to find its index in the accounts array.
