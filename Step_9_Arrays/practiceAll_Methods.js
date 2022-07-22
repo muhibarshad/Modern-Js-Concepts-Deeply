@@ -59,26 +59,30 @@ const { deposit, withDraw } = accounts
 console.log(withDraw, deposit);
 
 //Get the array by using reduce method taht contains the sum of the Deposits and withdraws
-const [depositA,withDrawA]= accounts
+const [depositA, withDrawA] = accounts
   .flatMap((acc) => acc.movements)
   .reduce(
     (acc, mov) => {
-      mov > 0 ? acc[0] += mov : acc[1] += mov;
+      mov > 0 ? (acc[0] += mov) : (acc[1] += mov);
       return acc;
     },
     [0, 0]
   );
-console.log(depositA,withDrawA);
+console.log(depositA, withDrawA);
 
 //covert the first letter of a word in a sentence to capital except 'a' single word
 
 //this is a book->This Is a Book
 
-const capitalizeString=function(str){
-  return  str
+const capitalizeString = function (str) {
+  const exceptions = ["in", "a", "with", "of", "are", "and", "the", "this"];
+  const capatilize = (str) => str[0].toUpperCase() + str.slice(1);
+  const titleCase = str
     .toLowerCase()
-    .split(' ')
-    .map(ele=>ele!='a'? replace(ele[0],ele[0].toUpperCase().splice(1)):ele);
+    .split(" ")
+    .map((word) => (exceptions.includes(word) ? word : capatilize(word)))
+    .join(" ");
 
-}
-console.log(capitalizeString('this is a book'));
+  return capatilize(titleCase);
+};
+console.log(capitalizeString("this is a book"));
