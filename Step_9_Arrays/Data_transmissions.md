@@ -16,6 +16,8 @@ There are three methods of data transmissions:
 - [Every_Method](#every-method)
 - [Flat_and_FlatMap_Methods](#falt-and-flatmap-methods)
 - [Sort_Method](#sort-method)
+- [Fill_Method](#fill-method)
+- [From_method](#from-method)
 
 ## Map Method
 
@@ -181,5 +183,14 @@ rollNo.sort((a,b) => b-a);
 ## Fill Method
   Fill method can actually mutate the array and fill the indexes that we want to fill with the element.
   Syntx:
-       arr.fill(element Want To Fill,starting Index,Ending Index Except Itself Including)
+   >arr.fill(element Want To Fill,starting Index,Ending Index Except Itself Including)
    For Better understanding see the example [Fill Method example](/Step_9_Arrays/fillMethod.js)
+
+## From Method
+   From method not be as a method on the array.It can be applied on the `Array.from` constructor 
+   method.means that a method of iterable can be applied on the constructor to make a new empty array or fill the array.
+   sytnx:
+   >Array.from({length:7},()=>1);
+   Its first parameter is the length object and second parameter is the map method returning something and fill the array.
+   See example [From Method](/Step_9_Arrays/fromMethod.js)
+   The major benefit of the From method is it can convert the  structure data which can look like the arrays  into original array.We can also pass the mov function in the second parameter that can perform the some methods on it.
