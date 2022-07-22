@@ -178,3 +178,8 @@ This is the best way to  decending order sorting the array.
 rollNo.sort((a,b) => b-a);
 
 ```
+## Fill Method
+  Fill method can actually mutate the array and fill the indexes that we want to fill with the element.
+  Syntx:
+       arr.fill(element Want To Fill,starting Index,Ending Index Except Itself Including)
+   For Better understanding see the example [Fill Method example](/Step_9_Arrays/fillMethod.js)
