@@ -1,0 +1,17 @@
+# Converting Numbers
+ In javascript the point values like `0.1+0.2` results as `0.300000000004` not as expected `0.3`,the reason behind is , in JS and some other languages like the PHP and Ruby the numbers and point values are stored in the binary format 64x based 2. So such 
+ point values results into infinity like in the based 10 format results as `3/10=3.33333..infinity`.But JS tried its best to resolve this problem.
+## Some basic conversions are here:
+ * ### +:
+   To convert the string into number we basically use the `Number('20')` but in we can aslo convert them by using the + operater `+('20)`.For more understanding see the examples in the [Converting Numbers File](/Step_10_Dates_numbers_timers/convertingNumbers.js)
+ * ### ParseInt and ParseFloat:
+   In modern JS ,we use the `Number.`Object with these parsing functions to highlight that it refers to the `Number` object.ParseInt coverts the strings having numbers and some alphabtes into only a single number value.
+   Same as for the ParseFloat it converts the floating values to strings .Examples in the [Converting Numbers File](/Step_10_Dates_numbers_timers/convertingNumbers.js)
+   >basic advantage of using in when we get the CSS values without units.
+ * ### isNan:
+   isNan returns the false when the checking dataType is a number.Beacuse it gives true only when checking dataType  `is_Not-A-Number`.Examples in the [Converting Numbers File](/Step_10_Dates_numbers_timers/convertingNumbers.js)
+ * ### isFinite:
+   To check the given value is a number or not.
+ * ### isInteger:
+   To check the given value is an unteger or not.
+   Examples in the [Converting Numbers File](/Step_10_Dates_numbers_timers/convertingNumbers.js)
