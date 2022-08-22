@@ -40,3 +40,10 @@ const getRandom=(max,min)=>Math.floor(Math.trunc(Math.random()*(max-min)+1)+min)
 //(max-min)....min+1________results
 ```
 Examples in the [Converting Numbers File](/Step_10_Dates_numbers_timers/MathFunctions_And_Rounding.js)
+
+# Reminder Operater 
+ Reminder operater is shown by `%` it gives the reminder.
+```js
+console.log(3%2);
+console.log(8%2);
+```
