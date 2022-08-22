@@ -47,3 +47,13 @@ Examples in the [Converting Numbers File](/Step_10_Dates_numbers_timers/MathFunc
 console.log(3%2);
 console.log(8%2);
 ```
+# Numeric Operater 
+  Numeric operater is represented by the `_` underscore operater.It is basically used to separete the big numbers .
+```js
+let earthMass=480_806_090;
+console.log(earthMass);
+let PI=3.14_5296;
+console.log(PI);
+console.log(Number('230_890_9000'));//NAN->beacuse it converts string to number
+console.log(parseInt('890_678_00)'));//890->it parse where the number ends are some string like format starts 
+```
