@@ -19,7 +19,7 @@
    Examples in the [Converting Numbers File](/Step_10_Dates_numbers_timers/convertingNumbers.js)
 
 # Math Functions and Rounding
-  Numbers are the premittive dataTypes not the objects so we cannot call the methods on the numbers.But the JavaScript do the ***_BOXING_***. Means convert the number into the object then calls the methods on it then again conver it into the premittive dataType.
+  Numbers are the premittive dataTypes not the objects so we cannot call the methods on the numbers.But the JavaScript do the ***_BOXING_***. Means convert the number into the object then calls the methods on it then again convert it into the premittive dataType.
   ## Some imortant Maths functions are here
 * Math.sqrt();
 * Math.max();
@@ -39,7 +39,7 @@ const getRandom=(max,min)=>Math.floor(Math.trunc(Math.random()*(max-min)+1)+min)
 //(max-min+min)...min+1_____After adding the min on both sides
 //(max-min)....min+1________results
 ```
-Examples in the [Converting Numbers File](/Step_10_Dates_numbers_timers/MathFunctions_And_Rounding.js)
+Examples in the [Math Functions and Rounding](/Step_10_Dates_numbers_timers/MathFunctions_And_Rounding.js)
 
 # Reminder Operater 
  Reminder operater is shown by `%` it gives the reminder.
