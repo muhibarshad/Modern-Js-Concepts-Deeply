@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercises</title>
-    <style>
-      .js{
+
+<svg fill="none" viewBox="0 0 800 400" width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <foreignObject width="100%" height="100%">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+
+      <style>
+         .js{
         background-color: rgb(233, 233, 21);
         color: black;
         font-weight: bold;
@@ -29,16 +27,14 @@
         justify-content: center;
         align-items: center;
       }
-    </style>
-  </head>
-  <body >
-    
-    <div class="js">
+      </style>
+
+      <div class="js">
       <h1 id="JS">JS</h1>
       <h1 id="muhib">with muhib7353</h1>
       
     </div>
 
-    <script src="/Step_10_Dates_numbers_timers/bigInt.js"></script>
-  </body>
-</html>
+    </div>
+  </foreignObject>
+</svg>

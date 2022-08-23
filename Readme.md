@@ -1,44 +1,8 @@
+<div align="center">
+    <img src="logo.svg" width="400" height="400" alt="css-in-readme">
+</div>
 
- <div
-      class="js"
-      style="
-        background-color: rgb(233, 233, 21);
-        color: black;
-        font-weight: bold;
-        height: 50vh;
-        width: 50vh;
-        font-family: sans-serif;
-        margin-left:50vh;
-      "
-    >
-      <h1
-        id="JS"
-        style="
-          font-size: 30vh;
-          padding-top: 150px;
-          height: 0vh;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
-        "
-      >
-        JS
-      </h1>
-      <h1
-        id="muhib"
-        style="
-          font-size: 5vh;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        "
-      >
-        with muhib7353
-      </h1>
-    </div>
 
-    
 # 🔴Argument passing in the funtions
 ## Permittive and objects 
 ##### Permittive values passing to functions.
