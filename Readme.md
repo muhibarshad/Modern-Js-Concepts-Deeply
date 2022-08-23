@@ -1,45 +1,77 @@
 <div align="center">
-    <img src="index.html">
+  <img src="logo.png">
 </div>
+>JavaScript works on the different browsers engine .JavaScript follows the JIT(just in time compilation).It is object-oriented,multi paradiagm,single thread language.This readMe.md file contains the core concepts after you learning the Vanilla JavaScript and fundamentals of JavsScript .If you are begginer and want to continue the modern javaScript features than you are in the right repository. choose your topic from the Contents , diverge into the deep concepts of JavaScript.☕
 
+# Contents
+ 1.[Functions](#🔴argument-passing-in-the-funtions)
+   *[Permittive and objects](#permittive-and-objects)
+   *[First Class Functions and Higher Order Functions](#🔴first-class-functions-and-higher-order-functions)
+   *[] 
+ 2.[Data Structures (Arrays,Strings,Maps,Sets,ArrayMethods)](#data-transmissions)
+    - [Map_Method](#map-method)
+    - [Filter_Method](#filter-method)
+    - [Reduce_Method](#reduce-method)
+    - [Find_Method](#find-method)
+    - [FindIndex_Method](#findindex-method)
+    - [Some_Method](#some-method)
+    - [Every_Method](#every-method)
+    - [Flat_and_FlatMap_Methods](#falt-and-flatmap-methods)
+    - [Sort_Method](#sort-method)
+    - [Fill_Method](#fill-method)
+    - [From_method](#from-method)
+  3.[Numbers,Dates,Timers](#converting-numbers)
+    *[ParseInt and ParseFloat](#parseint-and-parsefloat)
+    *[isNan](#isnan)
+    *[isFinite](#isfinite)
+    *[isInteger](#isinteger)
+    *[Math Functions and Rounding](#math-functions-and-rounding)
+    *[Reminder Operater](#reminder-operater)
+    *[Numeric Operater](#numeric-operater)
+    *[BIGINT](#bigint)
+    *[]()
+     
+  
 
 # 🔴Argument passing in the funtions
-## Permittive and objects 
-##### Permittive values passing to functions.
- When we should pass the permititive dataType as an argument to the function .
- Then the function parameter just copy the argument .So,its means any change in the
- function parameter does not effect the original value of the argument.This is same
- in the C++ (pass by value).
- ###### Example:
+ ## Permittive and objects 
+   ##### Permittive values passing to functions.
+   When we should pass the permititive dataType as an argument to the function .
+   Then the function parameter just copy the argument .So,its means any change in the
+   function parameter does not effect the original value of the argument.This is same
+   in the C++ (pass by value).
+      
+   ###### Example:
 
-```
+    ```js
    let x=4; 
     function z(y){ 
      y=5; 
      return y; 
    } 
- console.log(x); 
- console.log(z(x)); 
-``` 
+   console.log(x); 
+   console.log(z(x)); 
+    ``` 
 
-##### Objects passing to functions.
- In objects,consider the same scenerio in the above portion,functions parameter copy the
- address of the argument object in the stack not make the copy of the values in the heap.
- So,any change in the methods inside the function change the method in the heap.So,it actually 
- change the original value .(just like in the C++,(pass by refernce)).But in C++,we actually
- pass by refernce,but in JS all dataTypes are always pass by value.Its confusing,in objects 
- address value is passed not refernce.
+     
+   ##### Objects passing to functions.
+  In objects,consider the same scenerio in the above portion,functions  parameter copy the
+  address of the argument object in the stack not make the copy of the values in the heap.
+  So,any change in the methods inside the function change the method in the heap.So,it actually 
+  change the original value .(just like in the C++,(pass by refernce)).But in C++,we actually
+  pass by refernce,but in JS all dataTypes are always pass by value.Its confusing,in objects 
+  address value is passed not refernce.
 
 
 # 🔴First Class Functions and Higher Order Functions
  Functions are be expressions as:
- ```
+ ```js
  const sum=function(a,b){
   return a+b;
  }
  ```
  Function declerations are:
- ```
+ ```js
  function(a,b){
     return a+b;
  }
@@ -50,11 +82,11 @@ on the functions.Yes,thats true.
 
 ## Defination:
   Functions can also be passed as an arguments .As we see in the addEventListeners
-```
+```js
 document.addEventListener('click',sum);
 ```
 functions can also be retrive as return :
-```
+```js
 function(a,b){
     a+=7;
     return function(){
