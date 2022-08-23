@@ -74,11 +74,12 @@ console.log(parseInt('890_678_00)'));//890->it parse where the number ends are s
    console.log(hugeNum);//92032308203820390700254681014206464n
    ```   
    ## Some manipulations:
-    ```js
+   
+   ```js
     console.log(20n>15);//true
     console.log(30n===30);//false(beacuse dataType is different)
     console.log(20n=='20');//true
     console.log(600n+700n);//1300n
     console.log(9327937193739739398303n+' huge amount');//9327937193739739398303 huge amount
     console.log(10n/3n);//3n(round off the 3.3333333)
-    ```
+   ```   
