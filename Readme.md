@@ -1,5 +1,5 @@
 
-
+![logo](/logo.png)
 # 🔴Argument passing in the funtions
 ## Permittive and objects 
 ##### Permittive values passing to functions.
