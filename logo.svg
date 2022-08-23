@@ -8,8 +8,8 @@
         background-color: rgb(233, 233, 21);
         color: black;
         font-weight: bold;
-        height: 50vh;
-        width: 50vh;
+        height: 70vh;
+        width: 70vh;
         font-family: sans-serif;
       }
       #JS{
