@@ -57,3 +57,28 @@ console.log(PI);
 console.log(Number('230_890_9000'));//NAN->beacuse it converts string to number
 console.log(parseInt('890_678_00)'));//890->it parse where the number ends are some string like format starts 
 ```
+# BIGINT
+   We know that the numbers are stored in the binary format of based 64.It means 64  0101... values can be stored .But actually 53 bits are used to stored the numbers the other can be used for the sign of the number.
+   ```js
+   const hugeNum=92032308203820382038028320382038203;
+   console.log(hugeNum);//9.203230820382039e+34
+   ```
+   Not give the complete value it round it.So in Es 2020 a new feature is added named as `BigInt()` which can stored a big number as we want 
+   ```js
+   const hugeNum=BigInt(92032308203820382038028320382038203);
+   console.log(hugeNum);//92032308203820390700254681014206464n
+   ```   
+  > we can aslo use the `n` at the last of the number as a alternative of `BigInt()`.
+   ```js
+   const hugeNum=92032308203820382038028320382038203n;
+   console.log(hugeNum);//92032308203820390700254681014206464n
+   ```   
+   ## Some manipulations:
+    ```js
+    console.log(20n>15);//true
+    console.log(30n===30);//false(beacuse dataType is different)
+    console.log(20n=='20');//true
+    console.log(600n+700n);//1300n
+    console.log(9327937193739739398303n+' huge amount');//9327937193739739398303 huge amount
+    console.log(10n/3n);//3n(round off the 3.3333333)
+    ```
