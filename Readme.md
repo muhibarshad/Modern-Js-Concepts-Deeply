@@ -1,13 +1,14 @@
 <div align="center">
-  <img src="logo.png">
+  <img src="JS.png">
 </div>
+
 >JavaScript works on the different browsers engine .JavaScript follows the JIT(just in time compilation).It is object-oriented,multi paradiagm,single thread language.This readMe.md file contains the core concepts after you learning the Vanilla JavaScript and fundamentals of JavsScript .If you are begginer and want to continue the modern javaScript features than you are in the right repository. choose your topic from the Contents , diverge into the deep concepts of JavaScript.☕
 
 # Contents
  1.[Functions](#🔴argument-passing-in-the-funtions)
-   *[Permittive and objects](#permittive-and-objects)
-   *[First Class Functions and Higher Order Functions](#🔴first-class-functions-and-higher-order-functions)
-   *[] 
+   *  [Permittive and objects](#permittive-and-objects)
+   *  [First Class Functions and Higher Order Functions](#🔴first-class-functions-and-higher-order-functions)
+   *  [] 
  2.[Data Structures (Arrays,Strings,Maps,Sets,ArrayMethods)](#data-transmissions)
     - [Map_Method](#map-method)
     - [Filter_Method](#filter-method)
@@ -21,15 +22,14 @@
     - [Fill_Method](#fill-method)
     - [From_method](#from-method)
   3.[Numbers,Dates,Timers](#converting-numbers)
-    *[ParseInt and ParseFloat](#parseint-and-parsefloat)
-    *[isNan](#isnan)
-    *[isFinite](#isfinite)
-    *[isInteger](#isinteger)
-    *[Math Functions and Rounding](#math-functions-and-rounding)
-    *[Reminder Operater](#reminder-operater)
-    *[Numeric Operater](#numeric-operater)
-    *[BIGINT](#bigint)
-    *[]()
+    * [ParseInt and ParseFloat](#parseint-and-parsefloat)
+    * [isNan](#isnan)
+    * [isFinite](#isfinite)
+    * [isInteger](#isinteger)
+    * [Math Functions and Rounding](#math-functions-and-rounding)
+    * [Reminder Operater](#reminder-operater)
+    * [Numeric Operater](#numeric-operater)
+    * [BIGINT](#bigint)
      
   
 
