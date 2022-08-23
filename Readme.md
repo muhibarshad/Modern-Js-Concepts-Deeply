@@ -8,7 +8,7 @@
  1.[Functions](#🔴argument-passing-in-the-funtions)
    *  [Permittive and objects](#permittive-and-objects)
    *  [First Class Functions and Higher Order Functions](#🔴first-class-functions-and-higher-order-functions)
-   *  [] 
+
  2.[Data Structures (Arrays,Strings,Maps,Sets,ArrayMethods)](#data-transmissions)
     - [Map_Method](#map-method)
     - [Filter_Method](#filter-method)
@@ -21,6 +21,7 @@
     - [Sort_Method](#sort-method)
     - [Fill_Method](#fill-method)
     - [From_method](#from-method)
+    
   3.[Numbers,Dates,Timers](#converting-numbers)
     * [ParseInt and ParseFloat](#parseint-and-parsefloat)
     * [isNan](#isnan)
