@@ -2,6 +2,9 @@
   <img src="logo.png">
 </div>
 
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/muhib7353" data-color-scheme="no-preference: light; light: light; dark: dark;" aria-label="Follow @muhib7353 on GitHub">Follow @muhib7353</a>
+
 # Modern JavaScript Concepts Deeply
 
 >JavaScript works on the different browsers engine .JavaScript follows the JIT(just in time compilation).It is object-oriented,multi paradiagm,single thread language.This readMe.md file contains the core concepts after you learning the Vanilla JavaScript and fundamentals of JavsScript .If you are begginer and want to continue the modern javaScript features than you are in the right repository. choose your topic from the Contents , diverge into the deep concepts of JavaScript and enjoy your coffee☕😁.
