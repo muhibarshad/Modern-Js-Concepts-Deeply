@@ -16,14 +16,14 @@ const account1 = {
   pin: 1111,
 
   movementsDates: [
-    '2019-11-18T21:31:17.178Z',
-    '2019-12-23T07:42:02.383Z',
-    '2020-01-28T09:15:04.904Z',
-    '2020-04-01T10:17:24.185Z',
-    '2020-05-08T14:11:59.604Z',
-    '2020-05-27T17:01:17.194Z',
-    '2020-07-11T23:36:17.929Z',
-    '2020-07-12T10:51:36.790Z',
+    '2019-11-01T13:15:33.035Z',
+    '2019-11-30T09:48:16.867Z',
+    '2019-12-25T06:04:23.907Z',
+    '2020-01-25T14:18:46.235Z',
+    '2022-07-05T16:33:06.386Z',
+    '2022-08-24T14:43:26.374Z',
+    '2022-08-29T18:49:59.371Z',
+    '2022-08-30T12:01:20.894Z',
   ],
   currency: 'EUR',
   locale: 'pt-PT', // de-DE
@@ -36,14 +36,14 @@ const account2 = {
   pin: 2222,
 
   movementsDates: [
-    '2019-11-01T13:15:33.035Z',
-    '2019-11-30T09:48:16.867Z',
-    '2019-12-25T06:04:23.907Z',
-    '2020-01-25T14:18:46.235Z',
-    '2020-02-05T16:33:06.386Z',
-    '2020-04-10T14:43:26.374Z',
-    '2020-06-25T18:49:59.371Z',
-    '2020-07-26T12:01:20.894Z',
+    '2019-11-18T21:31:17.178Z',
+    '2019-12-23T07:42:02.383Z',
+    '2020-01-28T09:15:04.904Z',
+    '2020-04-01T10:17:24.185Z',
+    '2022-05-08T14:11:59.604Z',
+    '2022-05-27T17:01:17.194Z',
+    '2022-07-11T23:36:17.929Z',
+    '2022-07-12T10:51:36.790Z',
   ],
   currency: 'USD',
   locale: 'en-US',
@@ -93,6 +93,25 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /*My code start here*/
 
+//Supporting functions
+const daysPassed = (date1, date2) =>
+  Math.round(Math.abs(date2 - date1) / (1000 * 60 * 60 * 24));
+
+const printDate = date=>{
+
+  const noOfdays = daysPassed(new Date(), date);
+
+  if(noOfdays===0) return 'Today';
+  if(noOfdays===1) return 'Yesterday';
+  if(noOfdays<=7) return `${noOfdays} days ago`;
+  
+  let year = date.getFullYear();
+  let month = (date.getMonth() + 1).toString().padStart(2, 0);
+  let day = date.getDate().toString().padStart(2, 0);
+
+  return `${day}/${month}/${year}`;
+};
+
 //Display the Movements
 const displayMovements = function (acc, sort = false) {
   containerMovements.innerHTML = '';
@@ -102,14 +121,8 @@ const displayMovements = function (acc, sort = false) {
     const typeMov = mov > 0 ? 'deposit' : 'withdrawal';
 
     let movDate = new Date(acc.movementsDates[i]);
-    let year = movDate.getFullYear();
-    let month = (movDate.getMonth() + 1).toString().padStart(2, 0);
-    let date = movDate.getDate().toString().padStart(2, 0);
-    let hours = movDate.getHours().toString().padStart(2, 0);
-    let minutes = movDate.getMinutes().toString().padStart(2, 0);
-    let seconds = movDate.getSeconds().toString().padStart(2, 0);
 
-    let displayDate = `${date}/${month}/${year}`;
+    let displayDate = printDate(movDate);
     let html = `<div class="movements__row">
       <div class="movements__type movements__type--${typeMov}">${
       i + 1
