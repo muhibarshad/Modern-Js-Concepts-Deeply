@@ -97,7 +97,7 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 const daysPassed = (date1, date2) =>
   Math.round(Math.abs(date2 - date1) / (1000 * 60 * 60 * 24));
 
-const printDate = date=>{
+const printDate = (date,local)=>{
 
   const noOfdays = daysPassed(new Date(), date);
 
@@ -105,11 +105,12 @@ const printDate = date=>{
   if(noOfdays===1) return 'Yesterday';
   if(noOfdays<=7) return `${noOfdays} days ago`;
   
-  let year = date.getFullYear();
-  let month = (date.getMonth() + 1).toString().padStart(2, 0);
-  let day = date.getDate().toString().padStart(2, 0);
-
-  return `${day}/${month}/${year}`;
+  const option={
+    year:'numeric',
+    month:'numeric',
+    day:'numeric',
+  };
+  return Intl.DateTimeFormat(local,option).format(date);
 };
 
 //Display the Movements
@@ -122,7 +123,8 @@ const displayMovements = function (acc, sort = false) {
 
     let movDate = new Date(acc.movementsDates[i]);
 
-    let displayDate = printDate(movDate);
+    let displayDate = printDate(movDate,acc.locale);
+
     let html = `<div class="movements__row">
       <div class="movements__type movements__type--${typeMov}">${
       i + 1
@@ -190,14 +192,17 @@ btnLogin.addEventListener('click', function (e) {
     containerApp.style.opacity = 100;
 
     //computing dates
+    const option={
+      year:'numeric',
+      month:'long',
+      day:'numeric',
+      weekday:'long',
+      hours:'numeric',
+      minute:'numeric'
+    };
     let now = new Date();
-    let year = now.getFullYear();
-    let month = (now.getMonth() + 1).toString().padStart(2, 0);
-    let date = now.getDate().toString().padStart(2, 0);
-    let hours = now.getHours().toString().padStart(2, 0);
-    let minutes = now.getMinutes().toString().padStart(2, 0);
-    let seconds = now.getSeconds().toString().padStart(2, 0);
-    labelDate.textContent = `${date}/${month}/${year} , ${hours} : ${minutes}`;
+    let formatDate=Intl.DateTimeFormat(currentUser.locale,option).format(now);
+    labelDate.textContent =formatDate;
 
     labelWelcome.textContent = `Welcome ,${currentUser.owner.split(' ')[0]}`;
 
