@@ -50,6 +50,8 @@ const account2 = {
 };
 
 const accounts = [account1, account2];
+let currentUser, timer;
+const USD_to_PKR = 220.15;
 
 // Elements
 const labelWelcome = document.querySelector('.welcome');
@@ -94,7 +96,7 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 /*My code start here*/
 
 const startTimerLogOut = function () {
-  let time = 120;
+  let time = 10 * 60;
 
   let ticker = () => {
     let min = String(Math.trunc(time / 60)).padStart(2, 0);
@@ -142,11 +144,16 @@ const currencyFormat = function (value, local, currency) {
 };
 
 //Display the Movements
-const displayMovements = function (acc, sort = false) {
+const displayMovements = function (acc, sort = false, converted = false) {
   containerMovements.innerHTML = '';
   let movs = sort ? acc.movements.slice().sort((a, b) => a - b) : acc.movements; //sort
 
   movs.forEach(function (mov, i) {
+    mov = converted ? mov * USD_to_PKR : mov;
+    let loc, cur;
+    loc = converted ? navigator.local : acc.locale;
+    cur = converted ? 'PKR' : acc.currency;
+
     const typeMov = mov > 0 ? 'deposit' : 'withdrawal';
 
     let movDate = new Date(acc.movementsDates[i]);
@@ -159,8 +166,8 @@ const displayMovements = function (acc, sort = false) {
     <div class="movements__date">${displayDate}</div>
       <div class="movements__value">${currencyFormat(
         Math.abs(mov),
-        acc.local,
-        acc.currency
+        loc,
+        cur
       )}</div>
     </div>`;
 
@@ -181,42 +188,45 @@ const createUserName = function (accs) {
 createUserName(accounts);
 
 //calculate the balance
-const calcDisplayBalance = function (acc) {
-  acc.balance = acc.movements.reduce((acc, mov) => acc + mov, 0);
-  labelBalance.textContent = currencyFormat(
-    acc.balance,
-    acc.local,
-    acc.currency
-  );
+const calcDisplayBalance = function (acc, converted = false) {
+  let loc, cur, movement;
+  movement = converted
+    ? acc.movements.map(mov => mov * USD_to_PKR)
+    : acc.movements;
+  acc.balance = movement.reduce((acc, mov) => acc + mov, 0);
+  loc = converted ? navigator.local : acc.locale;
+  cur = converted ? 'PKR' : acc.currency;
+  labelBalance.textContent = currencyFormat(acc.balance, loc, cur);
 };
 
 /*incomes,outcomes,interest->Display*/
-const calDisplaySummary = function (acc) {
+const calDisplaySummary = function (acc, converted = false) {
+  
+  //currency converted
+  let loc, cur, movement;
+  movement = converted
+    ? acc.movements.map(mov => mov * USD_to_PKR)
+    : acc.movements;
+  loc = converted ? navigator.local : acc.locale;
+  cur = converted ? 'PKR' : acc.currency;
+
   //income
-  const income = acc.movements
+  const income = movement
     .filter(mov => mov > 0)
     .reduce((acc, mov) => acc + mov, 0);
-  labelSumIn.textContent = currencyFormat(income, acc.local, acc.currency);
+  labelSumIn.textContent = currencyFormat(income, loc, cur);
   //outcome
-  const outcome = acc.movements
+  const outcome = movement
     .filter(mov => mov < 0)
     .reduce((acc, mov) => acc + mov, 0);
-  labelSumOut.textContent = currencyFormat(
-    Math.abs(outcome),
-    acc.local,
-    acc.currency
-  );
+  labelSumOut.textContent = currencyFormat(Math.abs(outcome), loc, cur);
   //interst
-  const interest = acc.movements
+  const interest = movement
     .filter(mov => mov > 0)
     .map(deposit => deposit * (acc.interestRate / 100))
     .filter(deposit => deposit >= 1) //if he/she deposit greater than 1 EURO so he/she gets the interest
     .reduce((int, mov) => int + mov, 0);
-  labelSumInterest.textContent = currencyFormat(
-    interest,
-    acc.local,
-    acc.currency
-  );
+  labelSumInterest.textContent = currencyFormat(interest, loc, cur);
 };
 
 const updateUI = function (acc) {
@@ -226,7 +236,6 @@ const updateUI = function (acc) {
 };
 
 //Login_In------Activity
-let currentUser, timer;
 btnLogin.addEventListener('click', function (e) {
   e.preventDefault();
   currentUser = accounts.find(acc => acc.userName === inputLoginUsername.value);
@@ -285,7 +294,7 @@ btnTransfer.addEventListener('click', function (e) {
     recevierAcc.movementsDates.push(new Date().toISOString());
 
     clearInterval(timer);
-    timer=startTimerLogOut();
+    timer = startTimerLogOut();
 
     updateUI(currentUser);
   }
@@ -307,8 +316,7 @@ btnLoan.addEventListener('click', function (e) {
   }
 
   clearInterval(timer);
-  timer=startTimerLogOut();
-
+  timer = startTimerLogOut();
 });
 
 //Closing_Account------Activity
@@ -335,4 +343,15 @@ btnSort.addEventListener('click', function (e) {
   displayMovements(currentUser, !sorted);
   sorted = !sorted; //mutate the sorted
 });
+
+//currency converter
+let currencyConverted = false;
+document.querySelector('.logo').addEventListener('click', function (e) {
+  e.preventDefault();
+  displayMovements(currentUser, !sorted, !currencyConverted);
+  calDisplaySummary(currentUser, !currencyConverted);
+  calcDisplayBalance(currentUser, !currencyConverted);
+  currencyConverted = !currencyConverted;
+});
+
 
