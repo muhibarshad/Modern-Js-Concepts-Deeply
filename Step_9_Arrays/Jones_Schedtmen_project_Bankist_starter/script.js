@@ -94,7 +94,7 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 /*My code start here*/
 
 const startTimerLogOut = function () {
-  let time = 10;
+  let time = 120;
 
   let ticker = () => {
     let min = String(Math.trunc(time / 60)).padStart(2, 0);
@@ -284,6 +284,9 @@ btnTransfer.addEventListener('click', function (e) {
     currentUser.movementsDates.push(new Date().toISOString());
     recevierAcc.movementsDates.push(new Date().toISOString());
 
+    clearInterval(timer);
+    timer=startTimerLogOut();
+
     updateUI(currentUser);
   }
 });
@@ -302,6 +305,10 @@ btnLoan.addEventListener('click', function (e) {
       updateUI(currentUser);
     }, 3 * 1000);
   }
+
+  clearInterval(timer);
+  timer=startTimerLogOut();
+
 });
 
 //Closing_Account------Activity
@@ -329,7 +336,3 @@ btnSort.addEventListener('click', function (e) {
   sorted = !sorted; //mutate the sorted
 });
 
-//Fake account
-currentUser = account1;
-updateUI(currentUser);
-containerApp.style.opacity = 100;
