@@ -112,6 +112,7 @@ const startTimerLogOut = function () {
 
   ticker();
   const timer = setInterval(ticker, 1000);
+  return timer;
 };
 
 //Supporting functions
@@ -225,7 +226,7 @@ const updateUI = function (acc) {
 };
 
 //Login_In------Activity
-let currentUser;
+let currentUser, timer;
 btnLogin.addEventListener('click', function (e) {
   e.preventDefault();
   currentUser = accounts.find(acc => acc.userName === inputLoginUsername.value);
@@ -253,7 +254,9 @@ btnLogin.addEventListener('click', function (e) {
     inputLoginUsername.value = inputLoginPin.value = '';
     inputLoginPin.blur();
 
-    startTimerLogOut();
+    if (timer) clearInterval(timer);
+    timer = startTimerLogOut();
+
     updateUI(currentUser);
   }
 });
