@@ -254,11 +254,13 @@ btnLoan.addEventListener('click', function (e) {
   if (amount > 0 && currentUser.movements.some(mov => mov >= amount * 0.1)) {
     inputLoanAmount.value = '';
     inputLoanAmount.blur();
-
+   
+    setTimeout(()=>{
     currentUser.movements.push(amount);
     currentUser.movementsDates.push(new Date().toISOString());
-
     updateUI(currentUser);
+    },3*1000);
+
   }
 });
 
