@@ -1,19 +1,12 @@
 'use strict';
 
-/////////////////////////////////////////////////
-/////////////////////////////////////////////////
-// BANKIST APP
-
-/////////////////////////////////////////////////
-// Data
-
-// DIFFERENT DATA! Contains movement dates, currency and locale
+//BANKIST APP
 
 const account1 = {
-  owner: 'Jonas Schmedtmann',
+  owner: 'Muhib Arshad',
   movements: [200, 455.23, -306.5, 25000, -642.21, -133.9, 79.97, 1300],
-  interestRate: 1.2, // %
-  pin: 1111,
+  interestRate: 1.2,
+  pin: 1234,
 
   movementsDates: [
     '2019-11-01T13:15:33.035Z',
@@ -26,14 +19,14 @@ const account1 = {
     '2022-08-30T12:01:20.894Z',
   ],
   currency: 'EUR',
-  locale: 'pt-PT', // de-DE
+  locale: 'pt-PT',
 };
 
 const account2 = {
-  owner: 'Jessica Davis',
+  owner: 'Ali Abdullah',
   movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
   interestRate: 1.5,
-  pin: 2222,
+  pin: 9876,
 
   movementsDates: [
     '2019-11-18T21:31:17.178Z',
@@ -61,6 +54,8 @@ const labelSumIn = document.querySelector('.summary__value--in');
 const labelSumOut = document.querySelector('.summary__value--out');
 const labelSumInterest = document.querySelector('.summary__value--interest');
 const labelTimer = document.querySelector('.timer');
+const labelToggle = document.querySelector('.slider');
+const labelInput = document.querySelector('.checkbox');
 
 const containerApp = document.querySelector('.app');
 const containerMovements = document.querySelector('.movements');
@@ -79,10 +74,6 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
-/////////////////////////////////////////////////
-/////////////////////////////////////////////////
-// LECTURES
-
 const currencies = new Map([
   ['USD', 'United States dollar'],
   ['EUR', 'Euro'],
@@ -91,9 +82,7 @@ const currencies = new Map([
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-/////////////////////////////////////////////////
-
-/*My code start here*/
+//Implementation Start here
 
 const startTimerLogOut = function () {
   let time = 10 * 60;
@@ -201,7 +190,6 @@ const calcDisplayBalance = function (acc, converted = false) {
 
 /*incomes,outcomes,interest->Display*/
 const calDisplaySummary = function (acc, converted = false) {
-  
   //currency converted
   let loc, cur, movement;
   movement = converted
@@ -346,12 +334,17 @@ btnSort.addEventListener('click', function (e) {
 
 //currency converter
 let currencyConverted = false;
-document.querySelector('.logo').addEventListener('click', function (e) {
+document.querySelector('.slider').addEventListener('click', function (e) {
   e.preventDefault();
   displayMovements(currentUser, !sorted, !currencyConverted);
   calDisplaySummary(currentUser, !currencyConverted);
   calcDisplayBalance(currentUser, !currencyConverted);
   currencyConverted = !currencyConverted;
+  if (currencyConverted == true) {
+    document.querySelector('.USD').textContent = 'PKR';
+    labelToggle.style.backgroundColor = '#39b385';
+  } else {
+    document.querySelector('.USD').textContent = currentUser.currency;
+    labelToggle.style.backgroundColor = ' #ffb003';
+  }
 });
-
-
