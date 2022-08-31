@@ -113,6 +113,13 @@ const printDate = (date,local)=>{
   return Intl.DateTimeFormat(local,option).format(date);
 };
 
+const currencyFormat=function(value,local,currency){
+  return new Intl.NumberFormat(local,{
+    style:'currency',
+    currency:currency,
+  }).format(value);
+}
+
 //Display the Movements
 const displayMovements = function (acc, sort = false) {
   containerMovements.innerHTML = '';
@@ -122,15 +129,15 @@ const displayMovements = function (acc, sort = false) {
     const typeMov = mov > 0 ? 'deposit' : 'withdrawal';
 
     let movDate = new Date(acc.movementsDates[i]);
-
     let displayDate = printDate(movDate,acc.locale);
+    
 
     let html = `<div class="movements__row">
       <div class="movements__type movements__type--${typeMov}">${
       i + 1
     } ${typeMov}</div>
     <div class="movements__date">${displayDate}</div>
-      <div class="movements__value">${Math.abs(mov.toFixed(2))}€</div>
+      <div class="movements__value">${currencyFormat(Math.abs(mov),acc.local,acc.currency)}</div>
     </div>`;
 
     containerMovements.insertAdjacentHTML('afterbegin', html);
@@ -152,7 +159,7 @@ createUserName(accounts);
 //calculate the balance
 const calcDisplayBalance = function (acc) {
   acc.balance = acc.movements.reduce((acc, mov) => acc + mov, 0);
-  labelBalance.textContent = `${acc.balance.toFixed(2)}€`;
+  labelBalance.textContent = currencyFormat(acc.balance,acc.local,acc.currency);
 };
 
 /*incomes,outcomes,interest->Display*/
@@ -161,19 +168,19 @@ const calDisplaySummary = function (acc) {
   const income = acc.movements
     .filter(mov => mov > 0)
     .reduce((acc, mov) => acc + mov, 0);
-  labelSumIn.textContent = `${income.toFixed(2)}€`;
+  labelSumIn.textContent = currencyFormat(income,acc.local,acc.currency);
   //outcome
   const outcome = acc.movements
     .filter(mov => mov < 0)
     .reduce((acc, mov) => acc + mov, 0);
-  labelSumOut.textContent = `${Math.abs(outcome).toFixed(2)}€`;
+  labelSumOut.textContent = currencyFormat(Math.abs(outcome),acc.local,acc.currency);
   //interst
   const interest = acc.movements
     .filter(mov => mov > 0)
     .map(deposit => deposit * (acc.interestRate / 100))
     .filter(deposit => deposit >= 1) //if he/she deposit greater than 1 EURO so he/she gets the interest
     .reduce((int, mov) => int + mov, 0);
-  labelSumInterest.textContent = `${interest.toFixed(2)}€`;
+  labelSumInterest.textContent = currencyFormat(interest,acc.local,acc.currency);
 };
 
 const updateUI = function (acc) {
@@ -279,3 +286,9 @@ btnSort.addEventListener('click', function (e) {
   displayMovements(currentUser, !sorted);
   sorted = !sorted; //mutate the sorted
 });
+
+//Fake account
+currentUser=account1;
+updateUI(currentUser);
+containerApp.style.opacity = 100;
+
