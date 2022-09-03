@@ -12,9 +12,9 @@
 
 
 # Contents
-1.[Functions](#🔴argument-passing-in-the-funtions)
+1.[Functions](#argument-passing-in-the-funtions)
 * [Permittive and objects](#permittive-and-objects)
-* [First Class Functions and Higher Order Functions](#🔴first-class-functions-and-higher-order-functions)
+* [First Class Functions and Higher Order Functions](#first-class-functions-and-higher-order-functions)
 
 2.[Data Structures (Arrays,Strings,Maps,Sets,ArrayMethods)](#data-transmissions)
 - [Map_Method](#map-method)
@@ -40,7 +40,7 @@
 * [BIGINT](#bigint)
  
   
-# 🔴Argument passing in the funtions
+# Argument passing in the funtions
  ## Permittive and objects 
    ##### Permittive values passing to functions.
    When we should pass the permititive dataType as an argument to the function .
@@ -70,7 +70,7 @@
   address value is passed not refernce.
 
 
-# 🔴First Class Functions and Higher Order Functions
+# First Class Functions and Higher Order Functions
  Functions are be expressions as:
  ```js
  const sum=function(a,b){
