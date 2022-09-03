@@ -17,7 +17,7 @@
 - [Permittive and objects](#permittive-and-objects)
 - [First Class Functions and Higher Order Functions](#first-class-functions-and-higher-order-functions)
 
-  2.[Data Structures (Arrays,Strings,Maps,Sets,ArrayMethods)](#data-transmissions)
+2.[Data Structures (Arrays,Strings,Maps,Sets,ArrayMethods)](#data-transmissions)
 
 * [Map_Method](#map-method)
 * [Filter_Method](#filter-method)
@@ -31,7 +31,7 @@
 * [Fill_Method](#fill-method)
 * [From_method](#from-method)
 
-  3.[Numbers,Dates,Timers](#converting-numbers)
+3.[Numbers,Dates,Timers](#converting-numbers)
 
 - [ParseInt and ParseFloat](#parseint-and-parsefloat)
 - [isNan](#isnan)
@@ -41,6 +41,9 @@
 - [Reminder Operater](#reminder-operater)
 - [Numeric Operater](#numeric-operater)
 - [BIGINT](#bigint)
+- [Date and Time](#date-and-time)
+- [Internationalizing Dates and Number](#internationalizing-dates-and-numbers-or-intl)
+- [setTimeOut() and setInterval()](#timers-settimeout-and-setinterval)
 
 # Argument passing in the funtions
 
@@ -449,14 +452,16 @@ console.log(new Date("August 14,2022")); //Sun Aug 14 2022 00:00:00 GMT+0500 (Pa
 The months in the javascript `new Date()` are zero based means januray=0 ... december=11.
 
 ```js
-console.log(new Date(2022, 8, 12, 7, 30, 15)); //Mon Sep 12 2022 07:30:15 GMT+0500 (Pakistan Standard Time); //Months in the JS are zero based
+console.log(new Date(2022, 8, 12, 7, 30, 15)); /*Mon Sep 12 2022 07:30:15 GMT+0500 (Pakistan Standard 
+Time); //Months in the JS are zero based*/
 ```
 
 We can also use the `Time-Stamp` in Dates means the milliseconds pass from the starting time to till
 To get the starting time milliseconds.
 
 ```js
-console.log(new Date(0)); // Thu Jan 01 1970 05:00:00 GMT+0500 (Pakistan Standard Time) Give the initial Time
+console.log(new Date(0)); // Thu Jan 01 1970 05:00:00 GMT+0500 (Pakistan Standard Time) 
+//Give the initial Time
 ```
 
 ## Methods on the new Date():
