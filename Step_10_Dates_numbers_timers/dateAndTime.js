@@ -37,3 +37,4 @@ console.log(today);
 const daysPassed = (date1, date2) =>
   Math.abs(date2 - date1) / (1000 * 60 * 60 * 24);
 console.log(daysPassed(new Date(2022, 8, 12), new Date(2022, 7, 30)));
+

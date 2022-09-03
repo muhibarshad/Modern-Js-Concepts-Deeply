@@ -3,96 +3,109 @@
 </div>
 
 <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/muhib7353" data-color-scheme="no-preference: light; light: light; dark: dark;" aria-label="Follow @muhib7353 on GitHub">Follow @muhib7353</a>
 
+<a class="github-button" href="https://github.com/muhib7353" data-color-scheme="no-preference: light; light: light; dark: dark;" aria-label="Follow @muhib7353 on GitHub">Follow @muhib7353</a>
 
 # Modern JavaScript Concepts Deeply
 
->JavaScript works on the different browsers engine .JavaScript follows the JIT(just in time compilation).It is object-oriented,multi paradiagm,single thread language.This readMe.md file contains the core concepts after you learning the Vanilla JavaScript and fundamentals of JavsScript .If you are begginer and want to continue the modern javaScript features than you are in the right repository. choose your topic from the Contents , diverge into the deep concepts of JavaScript and enjoy your coffee☕😁.
-
+> JavaScript works on the different browsers engine .JavaScript follows the JIT(just in time compilation).It is object-oriented,multi paradiagm,single thread language.This readMe.md file contains the core concepts after you learning the Vanilla JavaScript and fundamentals of JavsScript .If you are begginer and want to continue the modern javaScript features than you are in the right repository. choose your topic from the Contents , diverge into the deep concepts of JavaScript and enjoy your coffee☕😁.
 
 # Contents
+
 1.[Functions](#argument-passing-in-the-funtions)
-* [Permittive and objects](#permittive-and-objects)
-* [First Class Functions and Higher Order Functions](#first-class-functions-and-higher-order-functions)
 
-2.[Data Structures (Arrays,Strings,Maps,Sets,ArrayMethods)](#data-transmissions)
-- [Map_Method](#map-method)
-- [Filter_Method](#filter-method)
-- [Reduce_Method](#reduce-method)
-- [Find_Method](#find-method)
-- [FindIndex_Method](#findindex-method)
-- [Some_Method](#some-method)
-- [Every_Method](#every-method)
-- [Flat_and_FlatMap_Methods](#falt-and-flatmap-methods)
-- [Sort_Method](#sort-method)
-- [Fill_Method](#fill-method)
-- [From_method](#from-method)
+- [Permittive and objects](#permittive-and-objects)
+- [First Class Functions and Higher Order Functions](#first-class-functions-and-higher-order-functions)
 
-3.[Numbers,Dates,Timers](#converting-numbers)
-* [ParseInt and ParseFloat](#parseint-and-parsefloat)
-* [isNan](#isnan)
-* [isFinite](#isfinite)
-* [isInteger](#isinteger)
-* [Math Functions and Rounding](#math-functions-and-rounding)
-* [Reminder Operater](#reminder-operater)
-* [Numeric Operater](#numeric-operater)
-* [BIGINT](#bigint)
- 
-  
+  2.[Data Structures (Arrays,Strings,Maps,Sets,ArrayMethods)](#data-transmissions)
+
+* [Map_Method](#map-method)
+* [Filter_Method](#filter-method)
+* [Reduce_Method](#reduce-method)
+* [Find_Method](#find-method)
+* [FindIndex_Method](#findindex-method)
+* [Some_Method](#some-method)
+* [Every_Method](#every-method)
+* [Flat_and_FlatMap_Methods](#falt-and-flatmap-methods)
+* [Sort_Method](#sort-method)
+* [Fill_Method](#fill-method)
+* [From_method](#from-method)
+
+  3.[Numbers,Dates,Timers](#converting-numbers)
+
+- [ParseInt and ParseFloat](#parseint-and-parsefloat)
+- [isNan](#isnan)
+- [isFinite](#isfinite)
+- [isInteger](#isinteger)
+- [Math Functions and Rounding](#math-functions-and-rounding)
+- [Reminder Operater](#reminder-operater)
+- [Numeric Operater](#numeric-operater)
+- [BIGINT](#bigint)
+
 # Argument passing in the funtions
- ## Permittive and objects 
-   ##### Permittive values passing to functions.
-   When we should pass the permititive dataType as an argument to the function .
-   Then the function parameter just copy the argument .So,its means any change in the
-   function parameter does not effect the original value of the argument.This is same
-   in the C++ (pass by value).
-      
+
+## Permittive and objects
+
+##### Permittive values passing to functions.
+
+When we should pass the permititive dataType as an argument to the function .
+Then the function parameter just copy the argument .So,its means any change in the
+function parameter does not effect the original value of the argument.This is same
+in the C++ (pass by value).
+
 ###### Example:
 
 ```js
-   let x=4; 
-    function z(y){ 
-     y=5; 
-     return y; 
-   } 
-   console.log(x); 
-   console.log(z(x)); 
-``` 
+let x = 4;
+function z(y) {
+  y = 5;
+  return y;
+}
+console.log(x);
+console.log(z(x));
+```
 
-     
 ##### Objects passing to functions.
-  In objects,consider the same scenerio in the above portion,functions  parameter copy the
-  address of the argument object in the stack not make the copy of the values in the heap.
-  So,any change in the methods inside the function change the method in the heap.So,it actually 
-  change the original value .(just like in the C++,(pass by refernce)).But in C++,we actually
-  pass by refernce,but in JS all dataTypes are always pass by value.Its confusing,in objects 
-  address value is passed not refernce.
 
+In objects,consider the same scenerio in the above portion,functions parameter copy the
+address of the argument object in the stack not make the copy of the values in the heap.
+So,any change in the methods inside the function change the method in the heap.So,it actually
+change the original value .(just like in the C++,(pass by refernce)).But in C++,we actually
+pass by refernce,but in JS all dataTypes are always pass by value.Its confusing,in objects
+address value is passed not refernce.
 
 # First Class Functions and Higher Order Functions
- Functions are be expressions as:
- ```js
- const sum=function(a,b){
-  return a+b;
- }
- ```
- Function declerations are:
- ```js
- function(a,b){
-    return a+b;
- }
+
+Functions are be expressions as:
+
+```js
+const sum = function (a, b) {
+  return a + b;
+};
 ```
-so actually,the functions are just the values .We know that objects are also be simple 
-values we can apply the methods on the objects .So ,we can also be apply the methods 
+
+Function declerations are:
+
+```js
+function(a,b){
+   return a+b;
+}
+```
+
+so actually,the functions are just the values .We know that objects are also be simple
+values we can apply the methods on the objects .So ,we can also be apply the methods
 on the functions.Yes,thats true.
 
 ## Defination:
-  Functions can also be passed as an arguments .As we see in the addEventListeners
+
+Functions can also be passed as an arguments .As we see in the addEventListeners
+
 ```js
-document.addEventListener('click',sum);
+document.addEventListener("click", sum);
 ```
+
 functions can also be retrive as return :
+
 ```js
 function(a,b){
     a+=7;
@@ -101,12 +114,14 @@ function(a,b){
     }
 }
 ```
+
 so ,such functions that are getting some another function has an argument and ,such functions
-that are returning some function are called the ***_HIGHER ORDER FUNCTIONS_***.
+that are returning some function are called the **_*HIGHER ORDER FUNCTIONS*_**.
 
 ## So ,What is the difference b/w First Class Functions and Higher Order Functions?
-  FIRST CLASS FUNCTIONS is the term used in the programming.But actually doing and writing the 
-  such functions are called higher order functions.
+
+FIRST CLASS FUNCTIONS is the term used in the programming.But actually doing and writing the
+such functions are called higher order functions.
 
 # Data Transmissions
 
@@ -176,7 +191,6 @@ Find index method is the cousion of th efind method😁.Beacuse it can actually 
 
 To see the exapmle see the [Find Index ](/Step_9_Arrays/findIndex.js).
 
-
 Suppose one of your application user want to delete its account.To find its index use findIndex method.
 
 - Use `Array.prototype.findIndex()` method to find its index in the accounts array.
@@ -184,20 +198,21 @@ Suppose one of your application user want to delete its account.To find its inde
 - Then use `Array.prototype.splice()` method to delete that account in the array.(mutate the original array)
 
 Data
+
 ```js
-const account1={userName:'ks',pin:0000};
-const account2={userName:'am',pin:9999};
-let accounts=[account1,account2];
+const account1 = { userName: "ks", pin: 0000 };
+const account2 = { userName: "am", pin: 9999 };
+let accounts = [account1, account2];
 ```
+
 Functionality
+
 ```js
-let currentUser=account2;
-const deleteAccount=function(accs){
- const index = accs.findIndex(
-      acc => acc.userName === currentUser.userName
-    );
-    accs.splice(index, 1); 
-}
+let currentUser = account2;
+const deleteAccount = function (accs) {
+  const index = accs.findIndex((acc) => acc.userName === currentUser.userName);
+  accs.splice(index, 1);
+};
 ```
 
 ## Some Method
@@ -206,10 +221,9 @@ Firstly we have to understand the includes method.In includes method we return t
 the given value exist in tha array or not.
 
 ```js
-const movements=[100,800,600,-500,-300,1000,-200];
-console.log(movements.includes(-300));//true
-console.log(movements.includes(-90000));//false
-
+const movements = [100, 800, 600, -500, -300, 1000, -200];
+console.log(movements.includes(-300)); //true
+console.log(movements.includes(-90000)); //false
 ```
 
 The drawBack of includes method is that ,we cannot apply the condition to get the specific that value
@@ -240,11 +254,10 @@ For the example see the [Flat and FlatMap Example](/Step_9_Arrays/flat_and_flatM
 Sort method can actually sort the strings.And also sort the numbers but in a string way not numerical way.Sorting can mutate the original array.
 
 ```js
-const students=['Muhib','Ali','Hamza','Zariab','Bilal'];
-console.log(students.sort());//sort the students array
-const rollNo=[40,1,9,70,34,22];
-console.log(rollNo.sort());//does not sort the array
-
+const students = ["Muhib", "Ali", "Hamza", "Zariab", "Bilal"];
+console.log(students.sort()); //sort the students array
+const rollNo = [40, 1, 9, 70, 34, 22];
+console.log(rollNo.sort()); //does not sort the array
 ```
 
 ##### To solve this problem
@@ -252,143 +265,379 @@ console.log(rollNo.sort());//does not sort the array
 Suppose we have an array like this
 
 ```js
-const rollNo=[40,1,9,70,34,22];
-
+const rollNo = [40, 1, 9, 70, 34, 22];
 ```
 
 we can pas the arrow function in the sort method
 
-
 This is the acending order sorting the array.
-```js
-rollNo.sort((a,b)=>{
-   if(a>b) return 1;
-   if(a<b) return -1;
-})
 
+```js
+rollNo.sort((a, b) => {
+  if (a > b) return 1;
+  if (a < b) return -1;
+});
 ```
+
 Logic behind is that if a > b then return true means chnge the `a,b as b,a ` then if a< b then do not change the position .And it loops over the array array.lenghth times and every callback the largest element goes to the end of the array.And In second iteration the second largest element goes to its 2nd last position.go and go on and then finally we get the sorted array.
 
 This is the decending order sorting the array.
+
 ```js
-rollNo.sort((a,b)=>{
-   if(a>b) return -1;
-   if(a<b) return 1;
-})
-
-```
-Now ,the thing we notice is that if a>b then it returns the 1 means change it if we get the positive value.So we can also write as 
-
-This is the best way to  acending order sorting the array.
-```js
-rollNo.sort((a,b) => a-b);
-
+rollNo.sort((a, b) => {
+  if (a > b) return -1;
+  if (a < b) return 1;
+});
 ```
 
-This is the best way to  decending order sorting the array.
-```js
-rollNo.sort((a,b) => b-a);
+Now ,the thing we notice is that if a>b then it returns the 1 means change it if we get the positive value.So we can also write as
 
+This is the best way to acending order sorting the array.
+
+```js
+rollNo.sort((a, b) => a - b);
 ```
+
+This is the best way to decending order sorting the array.
+
+```js
+rollNo.sort((a, b) => b - a);
+```
+
 ## Fill Method
-  Fill method can actually mutate the array and fill the indexes that we want to fill with the element.
-  Syntx:
-   >arr.fill(element Want To Fill,starting Index,Ending Index Except Itself Including)
-   For Better understanding see the example [Fill Method example](/Step_9_Arrays/fillMethod.js)
+
+Fill method can actually mutate the array and fill the indexes that we want to fill with the element.
+Syntx:
+
+> arr.fill(element Want To Fill,starting Index,Ending Index Except Itself Including)
+> For Better understanding see the example [Fill Method example](/Step_9_Arrays/fillMethod.js)
 
 ## From Method
-   From method not be as a method on the array.It can be applied on the `Array.from` constructor 
-   method.means that a method of iterable can be applied on the constructor to make a new empty array or fill the array.
-   sytnx:
-   >Array.from({length:7},()=>1);
-   Its first parameter is the length object and second parameter is the map method returning something and fill the array.
-   See example [From Method](/Step_9_Arrays/fromMethod.js)
-   The major benefit of the From method is it can convert the  structure data which can look like the arrays  into original array.We can also pass the mov function in the second parameter that can perform the some methods on it.
 
+From method not be as a method on the array.It can be applied on the `Array.from` constructor
+method.means that a method of iterable can be applied on the constructor to make a new empty array or fill the array.
+sytnx:
 
+> Array.from({length:7},()=>1);
+> Its first parameter is the length object and second parameter is the map method returning something and fill the array.
+> See example [From Method](/Step_9_Arrays/fromMethod.js)
+> The major benefit of the From method is it can convert the structure data which can look like the arrays into original array.We can also pass the mov function in the second parameter that can perform the some methods on it.
 
 # Converting Numbers
- In javascript the point values like `0.1+0.2` results as `0.300000000004` not as expected `0.3`,the reason behind is , in JS and some other languages like the PHP and Ruby the numbers and point values are stored in the binary format 64x based 2. So such 
- point values results into infinity like in the based 10 format results as `3/10=3.33333..infinity`.But JS tried its best to resolve this problem.
+
+In javascript the point values like `0.1+0.2` results as `0.300000000004` not as expected `0.3`,the reason behind is , in JS and some other languages like the PHP and Ruby the numbers and point values are stored in the binary format 64x based 2. So such
+point values results into infinity like in the based 10 format results as `3/10=3.33333..infinity`.But JS tried its best to resolve this problem.
+
 ## Some basic conversions are here:
- * ### +:
-   To convert the string into number we basically use the `Number('20')` but in we can aslo convert them by using the + operater `+('20)`.For more understanding see the examples in the [Converting Numbers File](/Step_10_Dates_numbers_timers/convertingNumbers.js)
-   >It will do type cocerion.
- * ### ParseInt and ParseFloat:
-   In modern JS ,we use the `Number.`Object with these parsing functions to highlight that it refers to the `Number` object.ParseInt coverts the strings having numbers and some alphabtes into only a single number value.
-   Same as for the ParseFloat it converts the floating values to strings .Examples in the [Converting Numbers File](/Step_10_Dates_numbers_timers/convertingNumbers.js)
-   >basic advantage of using in when we get the CSS values without units.
- * ### isNan:
-   isNan returns the false when the checking dataType is a number.Beacuse it gives true only when checking dataType  `is_Not-A-Number`.Examples in the [Converting Numbers File](/Step_10_Dates_numbers_timers/convertingNumbers.js)
- * ### isFinite:
-   To check the given value is a number or not.
-   >It will do type cocerion.
- * ### isInteger:
-   To check the given value is an unteger or not.
-   Examples in the [Converting Numbers File](/Step_10_Dates_numbers_timers/convertingNumbers.js)
+
+- ### +:
+  To convert the string into number we basically use the `Number('20')` but in we can aslo convert them by using the + operater `+('20)`.For more understanding see the examples in the [Converting Numbers File](/Step_10_Dates_numbers_timers/convertingNumbers.js)
+  > It will do type cocerion.
+- ### ParseInt and ParseFloat:
+  In modern JS ,we use the `Number.`Object with these parsing functions to highlight that it refers to the `Number` object.ParseInt coverts the strings having numbers and some alphabtes into only a single number value.
+  Same as for the ParseFloat it converts the floating values to strings .Examples in the [Converting Numbers File](/Step_10_Dates_numbers_timers/convertingNumbers.js)
+  > basic advantage of using in when we get the CSS values without units.
+- ### isNan:
+  isNan returns the false when the checking dataType is a number.Beacuse it gives true only when checking dataType `is_Not-A-Number`.Examples in the [Converting Numbers File](/Step_10_Dates_numbers_timers/convertingNumbers.js)
+- ### isFinite:
+  To check the given value is a number or not.
+  > It will do type cocerion.
+- ### isInteger:
+  To check the given value is an unteger or not.
+  Examples in the [Converting Numbers File](/Step_10_Dates_numbers_timers/convertingNumbers.js)
 
 # Math Functions and Rounding
-  Numbers are the premittive dataTypes not the objects so we cannot call the methods on the numbers.But the JavaScript do the ***_BOXING_***. Means convert the number into the object then calls the methods on it then again convert it into the premittive dataType.
-  ## Some imortant Maths functions are here
-* Math.sqrt();
-* Math.max();
-* Math.min();
-* Math.PI();
-* Math.trunc();
-* Math.floor();
-* Math.ciel();
-* Math.round();
-* (number).toFixed();
-* Math.random();
- ### To get the random number in the given range 
+
+Numbers are the premittive dataTypes not the objects so we cannot call the methods on the numbers.But the JavaScript do the **_*BOXING*_**. Means convert the number into the object then calls the methods on it then again convert it into the premittive dataType.
+
+## Some imortant Maths functions are here
+
+- Math.sqrt();
+- Math.max();
+- Math.min();
+- Math.PI();
+- Math.trunc();
+- Math.floor();
+- Math.ciel();
+- Math.round();
+- (number).toFixed();
+- Math.random();
+
+### To get the random number in the given range
+
 ```js
-const getRandom=(max,min)=>Math.floor(Math.trunc(Math.random()*(max-min)+1)+min);
+const getRandom = (max, min) =>
+  Math.floor(Math.trunc(Math.random() * (max - min) + 1) + min);
 //0....1
 //(max-min)...1___After multiplying with the (max-min)
 //(max-min+min)...min+1_____After adding the min on both sides
 //(max-min)....min+1________results
 ```
+
 Examples in the [Math Functions and Rounding](/Step_10_Dates_numbers_timers/MathFunctions_And_Rounding.js)
 
-# Reminder Operater 
- Reminder operater is shown by `%` it gives the reminder.
+# Reminder Operater
+
+Reminder operater is shown by `%` it gives the reminder.
+
 ```js
-console.log(3%2);
-console.log(8%2);
+console.log(3 % 2);
+console.log(8 % 2);
 ```
-# Numeric Operater 
-  Numeric operater is represented by the `_` underscore operater.It is basically used to separete the big numbers .
+
+# Numeric Operater
+
+Numeric operater is represented by the `_` underscore operater.It is basically used to separete the big numbers .
+
 ```js
-let earthMass=480_806_090;
+let earthMass = 480_806_090;
 console.log(earthMass);
-let PI=3.14_5296;
+let PI = 3.14_5296;
 console.log(PI);
-console.log(Number('230_890_9000'));//NAN->beacuse it converts string to number
-console.log(parseInt('890_678_00)'));//890->it parse where the number ends are some string like format starts 
+console.log(Number("230_890_9000")); //NAN->beacuse it converts string to number
+console.log(parseInt("890_678_00)")); //890->it parse where the number ends are some string like format starts
 ```
+
 # BIGINT
-   We know that the numbers are stored in the binary format of based 64.It means 64  0101... values can be stored .But actually 53 bits are used to stored the numbers the other can be used for the sign of the number.
-   ```js
-   const hugeNum=92032308203820382038028320382038203;
-   console.log(hugeNum);//9.203230820382039e+34
-   ```
-   Not give the complete value it round it.So in Es 2020 a new feature is added named as `BigInt()` which can stored a big number as we want 
-   ```js
-   const hugeNum=BigInt(92032308203820382038028320382038203);
-   console.log(hugeNum);//92032308203820390700254681014206464n
-   ```   
-  > we can aslo use the `n` at the last of the number as a alternative of `BigInt()`.
-   ```js
-   const hugeNum=92032308203820382038028320382038203n;
-   console.log(hugeNum);//92032308203820390700254681014206464n
-   ```   
-   ## Some manipulations:
-   
-   ```js
-    console.log(20n>15);//true
-    console.log(30n===30);//false(beacuse dataType is different)
-    console.log(20n=='20');//true
-    console.log(600n+700n);//1300n
-    console.log(9327937193739739398303n+' huge amount');//9327937193739739398303 huge amount
-    console.log(10n/3n);//3n(round off the 3.3333333)
-   ```   
+
+We know that the numbers are stored in the binary format of based 64.It means 64 0101... values can be stored .But actually 53 bits are used to stored the numbers the other can be used for the sign of the number.
+
+```js
+const hugeNum = 92032308203820382038028320382038203;
+console.log(hugeNum); //9.203230820382039e+34
+```
+
+Not give the complete value it round it.So in Es 2020 a new feature is added named as `BigInt()` which can stored a big number as we want
+
+```js
+const hugeNum = BigInt(92032308203820382038028320382038203);
+console.log(hugeNum); //92032308203820390700254681014206464n
+```
+
+> we can aslo use the `n` at the last of the number as a alternative of `BigInt()`.
+
+```js
+const hugeNum = 92032308203820382038028320382038203n;
+console.log(hugeNum); //92032308203820390700254681014206464n
+```
+
+## Some manipulations:
+
+```js
+console.log(20n > 15); //true
+console.log(30n === 30); //false(beacuse dataType is different)
+console.log(20n == "20"); //true
+console.log(600n + 700n); //1300n
+console.log(9327937193739739398303n + " huge amount"); //9327937193739739398303 huge amount
+console.log(10n / 3n); //3n(round off the 3.3333333)
+```
+
+# Date and Time
+
+To get local the Date and Time in Javascript use the `new Date()` function .
+
+```js
+console.log(new Date()); //Sat Sep 03 2022 22:17:33 GMT+0500 (Pakistan Standard Time);
+```
+
+Pass the strings in the `new Date()` function it parse it into the complete date.
+
+```js
+console.log(new Date("August 14,2022")); //Sun Aug 14 2022 00:00:00 GMT+0500 (Pakistan Standard Time);
+```
+
+The months in the javascript `new Date()` are zero based means januray=0 ... december=11.
+
+```js
+console.log(new Date(2022, 8, 12, 7, 30, 15)); //Mon Sep 12 2022 07:30:15 GMT+0500 (Pakistan Standard Time); //Months in the JS are zero based
+```
+
+We can also use the `Time-Stamp` in Dates means the milliseconds pass from the starting time to till
+To get the starting time milliseconds.
+
+```js
+console.log(new Date(0)); // Thu Jan 01 1970 05:00:00 GMT+0500 (Pakistan Standard Time) Give the initial Time
+```
+
+## Methods on the new Date():
+
+```js
+//Methods in the dates
+const today = new Date();
+console.log(today);
+console.log(today.getFullYear());
+console.log(today.getMonth()); //zero based
+console.log(today.getDate()); //gives day no
+console.log(today.getDay()); //give day of the week
+console.log(today.getHours());
+console.log(today.getMinutes());
+console.log(today.getSeconds());
+console.log(today.getMilliseconds());
+console.log(today.toISOString()); //standard time zone format
+console.log(today.getTime()); //gives millseconds after the timeStamp(1661878587016)
+console.log(new Date(today.getTime()));
+console.log(Date.now()); //same gives the TimeStamp
+
+//We can aslo change the time(by using set)
+today.setFullYear(2023);
+console.log(today);
+```
+
+### How we can calculate the days passed between two dates?
+
+```js
+const daysPassed = (date1, date2) =>
+  Math.abs(date2 - date1) / (1000 * 60 * 60 * 24);
+console.log(daysPassed(new Date(2022, 8, 12), new Date(2022, 7, 30)));
+```
+
+# Internationalizing Dates and numbers or Intl
+
+> Internationalizing is the process of catching APIS from the local navigator and ISO language fromates to `Format` the dates and numbers according to local country style.
+
+## Internationalizing Dates
+
+It can format the date and time :
+
+### Syntax:
+
+**Intl.DateTimeFormat(ISOLanguageCode,objectCarringKeys).format(new Date())**  
+ In object to print the date and time in `language` format set the key value as `long`.
+In object to print the date and time in `numbers` format set the key value as `numeric`.
+If you don't know what is the local `ISO language code` to find it use the `navigator.locale`;
+
+```js
+const local = navigator.local; //To get the local ISO language code=
+```
+
+Example;
+
+```js
+//Formatting date and time
+const options = {
+  year: "numeric",
+  month: "long",
+  weekday: "long",
+  day: "numeric",
+  hour: "numeric",
+  minute: "numeric",
+};
+
+const nowDate = new Date();
+const local = navigator.local; //To get the local ISO language code
+const formatDate = Intl.DateTimeFormat("ur-PK", options).format(nowDate);
+console.log(formatDate);
+```
+
+## Internationalizing Numbers
+
+It can format Numbers :
+
+### Syntax:
+
+**Intl.NumberFormat(ISOLanguageCode,objectCarringKeys).format(numberVariable)**  
+ In object to print the number in `currency` format set the key as `style` value as `currency` and another key as `currency` and its value is `currencyCode`.
+In object to print the number in `units` format set the key as `style` value as `unit` and another key as `unit` and its value is `unitCode`.
+
+Example;
+
+```js
+//formatting numbers
+const amount = 234567.89;
+const option = {
+  style: "currency", //unit,currency,percen
+  currency: "USD",
+};
+console.log(new Intl.NumberFormat("en-UK", option).format(amount));
+```
+
+# Timers SetTimeOut() and setInterval()
+
+## SetTimeOut()
+
+If you want to print and execute some portion of code after the sometime use the `setTimeOut()` function.
+
+### Syntax:
+
+**setTimeOut(functionToExecute,timeInMilliSeconds)**
+1sec=1000msec;
+_Pass parmeters aslo and default as a third parameter_
+Example:
+
+```js
+//Display it after 3 seconds
+setTimeout(
+  (name) => console.log(`Hy! How are you ${name} my best friend 😍`),
+  3 * 1000,
+  "Muhib"
+);
+console.log("Loading......");
+```
+
+To clear and stop the `seTimeOut()` use the `clearTimeOut()` function.
+
+```js
+//To stop the setTimeout (clearTimeout)
+const have = ["pencil", "pen"];
+const time = setTimeout(
+  (n1, n2) => console.log(`Are you have ${n1} or ${n2} ?`),
+  2 * 1000,
+  ...have
+);
+
+if (have.includes("pencil")) clearTimeout(time);
+```
+
+### Important Note:
+
+> When we use the `setTimeOut()` function it does't mean that function execuation stops for that point.Absolutly not,JavaScript code complete its execuation and go to the next line. As a result,its mean that part of portion executes earlier but display and show to user after such time this feature is also called the `Asynchronous JavaScript`.
+
+## setInterval()
+
+For the repitation of execuation of code after sometime.
+
+### Syntax:
+
+**setInterval(functionToExecute,timeInMilliSeconds)**
+1sec=1000msec;
+_Pass parmeters aslo and default as a third parameter_
+Example:
+
+```js
+//SetInterval
+setInterval(() => {
+  const date = new Date();
+  console.log(date);
+}, 1 * 1000);
+```
+
+To clear and stop the `seInterval()` use the `clearInterval()` function.
+
+```js
+//To stop the setTimeout (clearTimeout)
+const have = ["pencil", "pen"];
+const time = setTimeout(
+  (n1, n2) => console.log(`Are you have ${n1} or ${n2} ?`),
+  2 * 1000,
+  ...have
+);
+
+if (have.includes("pencil")) clearTimeout(time);
+```
+
+### How to make the digital clock in javaScript ⏲ ?
+
+```js
+//Making Digitial Clock
+setInterval(() => {
+  const now = new Date();
+  const local = navigator.local;
+  const optoins = {
+    hour: "numeric",
+    minute: "numeric",
+    second: "numeric",
+  };
+  const formatedDate = Intl.DateTimeFormat(local, optoins).format(now);
+  console.log(formatedDate);
+}, 1 * 1000);
+```
