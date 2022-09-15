@@ -42,3 +42,5 @@ document
   .addEventListener('click', function () {
     cookieMessage.remove();
   });
+
+  
