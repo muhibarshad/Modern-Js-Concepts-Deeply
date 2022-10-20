@@ -20,7 +20,7 @@
 >>>>>Some methods you already know
     arr.push();
     arr.pop();
-    arr.on shift();
+    arr.unshift();
     arr.shift();
     arr.includes();
     arr.indexOf();

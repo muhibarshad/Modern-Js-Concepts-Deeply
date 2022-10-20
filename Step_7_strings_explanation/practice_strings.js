@@ -22,3 +22,4 @@ for (const str of flights.split("+")) {
     )}.`.padStart(42)
   );
 }
+
