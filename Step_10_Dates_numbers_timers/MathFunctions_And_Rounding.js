@@ -7,7 +7,7 @@ console.log(Math.max(9,7,2,5,3));//9
 console.log(Math.min(9,7,2,5,3));//2
 console.log(Math.min(9,7,'2',5,3));//2
 console.log(Math.min(9,7,'2px',5,3));//NAN
-console.log(Math.PI**Number.parseInt('12px')**2);
+console.log(Math.PI*Number.parseInt('12px')**2);
 console.log(Math.trunc(23.6));
 console.log(Math.floor(23.6));
 console.log(Math.ceil(23.6));
