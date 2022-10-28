@@ -55,7 +55,7 @@ document.querySelector(".nav__links").addEventListener("click", (e) => {
   }
 });
 
-//Tabbed Component
+//Tabbed Component_on_every_click the random page changes
 const tabs = document.querySelectorAll(".operations__tab");
 const tabsContainer = document.querySelector(".operations__tab-container");
 const tabsContent = document.querySelectorAll(".operations__content");
@@ -70,4 +70,86 @@ tabsContainer.addEventListener("click", (e) => {
   document
     .querySelector(`.operations__content--${elementClicked.dataset.tab}`)
     .classList.add("operations__content--active");
+});
+
+//Fade__onHover()
+const navBar = document.querySelector(".nav");
+const fadingNav__links = function (e) {
+  if (e.target.classList.contains("nav__link")) {
+    const targetElement = e.target;
+    const siblings = targetElement
+      .closest(".nav")
+      .querySelectorAll(".nav__link");
+    const logo = targetElement.closest(".nav").querySelector("img");
+    siblings.forEach((sibling) => {
+      if (sibling != targetElement) sibling.style.opacity = this;
+    });
+    logo.style.opacity = this;
+  }
+};
+navBar.addEventListener("mouseover", fadingNav__links.bind(0.5));
+navBar.addEventListener("mouseout", fadingNav__links.bind(1));
+
+//Scrolling_Sticky_NavBar
+//IntersectingAPI_with the observer
+const heade = document.querySelector(".header");
+const navBar_height = navBar.getBoundingClientRect().height;
+const observer = new IntersectionObserver(
+  (enteries) => {
+    const [entry] = enteries;
+    !entry.isIntersecting
+      ? navBar.classList.add("sticky")
+      : navBar.classList.remove("sticky");
+  },
+  {
+    root: null,
+    threshold: 0,
+    rootMargin: `${navBar_height}px`,
+  }
+);
+observer.observe(heade);
+
+//Reveal Elements on the scroll
+const allSections = document.querySelectorAll(".section");
+const revealElements = new IntersectionObserver(
+  (enteries, observer) => {
+    const [entery] = enteries;
+    if (!entery.isIntersecting) return;
+    entery.target.classList.remove("section--hidden");
+    observer.unobserve(entery.target);
+  },
+  {
+    root: null,
+    threshold: 0.15,
+  }
+);
+allSections.forEach((section) => {
+  revealElements.observe(section);
+  section.classList.add("section--hidden");
+});
+
+//Lazy_Loading_Images
+const allImages = document.querySelectorAll("img[data-src]");
+const loadingImages = new IntersectionObserver(
+  (enteries, observer) => {
+    const [entery] = enteries;
+    if (!entery.isIntersecting) return;
+    entery.target.src = entery.target.dataset.src;
+    entery.target.addEventListener("load", () => {
+      entery.target.classList.remove("lazy-img");
+    });
+    observer.unobserve(entery.target);
+  },
+  {
+    root: null,
+    rootMargin: "-200px", //run fucntion before 200px of the image reaching
+    threshold: 0,
+  }
+);
+allImages.forEach((img) => loadingImages.observe(img));
+
+//DOM_lifeCycle(stay_on_page)
+window.addEventListener("beforeunload", (e) => {
+  e.preventDefault();
+  e.returnValue = "";
 });

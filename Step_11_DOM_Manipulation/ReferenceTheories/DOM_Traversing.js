@@ -10,7 +10,7 @@ console.log(h1.lastElementChild);
 //BY Parent:move up
 console.log(h1.parentNode);//parent element in ehich it develops
 console.log(h1.parentElement);//same as above
-console.log(h1.closest('h1').style.backgroundColor='red')//To get the closet parent when you don't know who it is
+console.log(h1.closest('.h1').style.backgroundColor='red')//To get the closet parent when you don't know who it is
 
 //BY Siblings:move sideways(only have to ways to get only previous and next)
 console.log(h1.previousElementSibling);
