@@ -148,16 +148,14 @@ const loadingImages = new IntersectionObserver(
 );
 allImages.forEach((img) => loadingImages.observe(img));
 
-//DOM_lifeCycle(stay_on_page)
-// window.addEventListener("beforeunload", (e) => {
-//   e.preventDefault();
-//   e.returnValue = "";
-// });
+// DOM_lifeCycle(stay_on_page)
+window.addEventListener("beforeunload", (e) => {
+  e.preventDefault();
+  e.returnValue = "";
+});
 
 //Slider
-
 const movingSlider = function () {
-
   //variables
   const leftSlide_btn = document.querySelector(".slider__btn--left");
   const rightSlide_btn = document.querySelector(".slider__btn--right");
@@ -166,8 +164,6 @@ const movingSlider = function () {
   const dotsContanier = document.querySelector(".dots");
   let maxSlides = slides.length;
   let curSlide = 0;
-   
-
   //By Buttons
   const sliderMovement = (curSlide) => {
     slides.forEach((slide, index) => {
@@ -175,19 +171,15 @@ const movingSlider = function () {
     });
   };
   const nextSlide = () => {
-    //0,100,200,300
     curSlide === maxSlides - 1 ? (curSlide = 0) : curSlide++;
     sliderMovement(curSlide);
     activeDot(curSlide);
   };
   const previousSlide = () => {
-    //-100,0,200,300
     curSlide === 0 ? (curSlide = maxSlides - 1) : curSlide--;
     sliderMovement(curSlide);
     activeDot(curSlide);
   };
-
-
   //By Dots
   const creatingDots = function () {
     slides.forEach((_, index) => {
@@ -210,16 +202,12 @@ const movingSlider = function () {
     sliderMovement(slide);
     activeDot(slide);
   });
-
-
   //By arrowKeys
   document.addEventListener("keydown", (e) => {
     e.key === "ArrowRight" && nextSlide();
     e.key === "ArrowLeft" && previousSlide();
     activeDot(curSlide);
   });
-   
-  
   //Initilazer
   const init = () => {
     sliderMovement(0);
