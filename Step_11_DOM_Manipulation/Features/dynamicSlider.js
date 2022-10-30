@@ -219,3 +219,7 @@ const movingSlider = function () {
   leftSlide_btn.addEventListener("click", previousSlide);
 };
 movingSlider();
+
+
+
+
