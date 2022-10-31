@@ -104,7 +104,7 @@ const observer = new IntersectionObserver(
   {
     root: null,
     threshold: 0,
-    rootMargin: `${navBar_height}px`,
+    rootMargin: `-${navBar_height}px`,
   }
 );
 observer.observe(heade);
@@ -125,7 +125,7 @@ const revealElements = new IntersectionObserver(
 );
 allSections.forEach((section) => {
   revealElements.observe(section);
-  // section.classList.add("section--hidden");
+  section.classList.add("section--hidden");
 });
 
 //Lazy_Loading_Images

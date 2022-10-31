@@ -1,5 +1,5 @@
 /*
-Every object has a prperty of the __proto__ that shows the behaviours inherited from the constructor function. In the constructotr function the prototype property itslef and object so it has a orototyoe itself. And this __proto__ is inherited from the object constructor function.And to move on , this object constructor function's prototype object has an prototype is null, which is our last in the scope chain.
+Every object has a prperty of the __proto__ that shows the behaviours inherited from the constructor function. In the constructotr function the prototype property itslef and object so it has a prototyoe itself. And this __proto__ is inherited from the object constructor function.And to move on , this object constructor function's prototype object has an prototype is null, which is our last in the scope chain.
 When we call any method on our object of constructor fucnction, it can firstly search in othe object properties and methods, if not found them search in the object _proto__ properties, if not found then search in the _proto__ of the Constructor function prototype object. and move on to even not found null __proto__.This process is called the scope chain.
 Arrays and functions are objects itself beacuse in the scope chain they have an __proto__ of the Object constructor function so they have a full access to the Object methods as wall.
 */
