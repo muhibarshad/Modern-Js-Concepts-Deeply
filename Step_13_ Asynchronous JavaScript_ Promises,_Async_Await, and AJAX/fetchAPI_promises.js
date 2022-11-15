@@ -34,5 +34,6 @@ const getCountryData = function (countryName) {
       displayingCountry(data[0]);
     });
 };
+getCountryData("India");
 getCountryData("Pakistan");
-getCountryData("UAE");
+getCountryData("USA");

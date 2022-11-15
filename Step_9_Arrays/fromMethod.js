@@ -10,3 +10,4 @@ const movs = Array.from(document.querySelectorAll(".mov"), (mov) =>
   Number(mov.textContent.replace("$", ""))
 );
 console.log(movs);
+
