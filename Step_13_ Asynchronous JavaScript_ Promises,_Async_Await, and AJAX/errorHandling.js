@@ -50,6 +50,8 @@ const getCountryData = function (countryName) {
   )
     .then((data) => {
       displayingCountry(data[0]);
+      console.log(data)
+      console.log(data[0])
       const neighbour = data[0].borders[0];
       if (!neighbour) throw new Error("No neighbour country found");
       return getJson(
@@ -69,5 +71,5 @@ const getCountryData = function (countryName) {
 };
 
 btn.addEventListener("click", () => {
-  getCountryData("Pakistan");
+  getCountryData("USA");
 });
