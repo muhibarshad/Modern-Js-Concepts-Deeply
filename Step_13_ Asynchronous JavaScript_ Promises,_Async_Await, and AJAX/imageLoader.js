@@ -3,11 +3,13 @@
 ///Step_13_ Asynchronous JavaScript_ Promises,_Async_Await, and AJAX/Jones_starter_file/img/img-2.jpg
 let currentImage = "";
 const contanier = document.querySelector(".container");
+const imgContanier = document.querySelector(".images");
 const createImage = function (imgPath) {
   return new Promise((resolve, reject) => {
     const img = document.createElement("img");
     img.src = `${imgPath}`;
     img.addEventListener("load", () => {
+      imgContanier.append(img);
       resolve(img);
     });
     img.addEventListener("error", () => {
@@ -15,19 +17,54 @@ const createImage = function (imgPath) {
     });
   });
 };
-
 const wait = function (sec) {
   return new Promise((resolve) => {
-    setTimeout(resolve, 2 * 1000);
+    setTimeout(resolve, sec * 1000);
   });
 };
-
-const loadNPause = async function (imgPath) {
-  currentImage = await createImage(imgPath);
-  console.log(currentImage)
-  // contanier.append(currentImage);
-
+const imageLoading = async function (path) {
+  currentImage = await createImage(path);
+  imgContanier.append(currentImage);
+  await wait(2);
+  currentImage.style.display = "none";
+  await wait(2);
 };
-loadNPause(
-  "/Jones_starter_file/img/img-1.jpg"
-);
+
+// To get the changing images continously
+const loadNPause = async function () {
+  try {
+    await imageLoading(
+      "/Step_13_ Asynchronous JavaScript_ Promises,_Async_Await, and AJAX/Jones_starter_file/img/img-1.jpg"
+    );
+    await imageLoading(
+      "/Step_13_ Asynchronous JavaScript_ Promises,_Async_Await, and AJAX/Jones_starter_file/img/img-2.jpg"
+    );
+    await imageLoading(
+      "/Step_13_ Asynchronous JavaScript_ Promises,_Async_Await, and AJAX/Jones_starter_file/img/img-3.jpg"
+    );
+  } catch (err) {
+    console.error(`${err.message}`);
+  }
+};
+loadNPause();
+
+//Laod ll teh images at the same time
+const loadAll = async function (imgArr) {
+  try {
+    const imgs = imgArr.map(async (img) => await createImage(img));
+    const imgsArr = await Promise.all(imgs);
+    imgsArr.forEach((img) => {
+      img.classList.add("parallel");
+    });
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+const arr = [
+  "/Step_13_ Asynchronous JavaScript_ Promises,_Async_Await, and AJAX/Jones_starter_file/img/img-1.jpg",
+  "/Step_13_ Asynchronous JavaScript_ Promises,_Async_Await, and AJAX/Jones_starter_file/img/img-2.jpg",
+  "/Step_13_ Asynchronous JavaScript_ Promises,_Async_Await, and AJAX/Jones_starter_file/img/img-3.jpg",
+];
+
+loadAll(arr);
