@@ -1,60 +1,33 @@
 "use strict";
 
-const contanier = document.querySelector(".contanier");
-let currentImg = "";
+///Step_13_ Asynchronous JavaScript_ Promises,_Async_Await, and AJAX/Jones_starter_file/img/img-2.jpg
+let currentImage = "";
+const contanier = document.querySelector(".container");
 const createImage = function (imgPath) {
-  return new Promise(function (resolve, reject) {
-    let img = document.createElement("img");
+  return new Promise((resolve, reject) => {
+    const img = document.createElement("img");
     img.src = `${imgPath}`;
-    img.addEventListener("load", function () {
+    img.addEventListener("load", () => {
       resolve(img);
     });
-    img.addEventListener("error", function () {
-      reject(new Error("Imgage not found"));
+    img.addEventListener("error", () => {
+      reject(new Error("Error:Image path not found!"));
     });
   });
 };
 
 const wait = function (sec) {
-  return new Promise(function (resolve) {
-    setTimeout(resolve, sec * 1000);
+  return new Promise((resolve) => {
+    setTimeout(resolve, 2 * 1000);
   });
 };
 
-createImage(
-  "/Step_13_ Asynchronous JavaScript_ Promises,_Async_Await, and AJAX/Jones_starter_file/img/img-1.jpg"
-)
-  .then((resImg) => {
-    currentImg = resImg;
-    contanier.append(currentImg);
-    return wait(2);
-  })
-  .then(() => {
-    currentImg.style.display = "none";
-    return wait(2);
-  })
-  .then(() => {
-    return createImage(
-      "/Step_13_ Asynchronous JavaScript_ Promises,_Async_Await, and AJAX/Jones_starter_file/img/img-2.jpg"
-    );
-  })
-  .then((resImg) => {
-    currentImg = resImg;
-    contanier.append(currentImg);
-    return wait(2);
-  })
-  .then(() => {
-    currentImg.style.display = "none";
-    return wait(2);
-  })
-  .then(() => {
-    return createImage(
-      "/Step_13_ Asynchronous JavaScript_ Promises,_Async_Await, and AJAX/Jones_starter_file/img/img-3.jpg"
-    );
-  })
-  .then((resImg) => {
-    currentImg = resImg;
-    contanier.append(currentImg);
-    return wait(2);
-  })
-  .catch((err) => console.error(err));
+const loadNPause = async function (imgPath) {
+  currentImage = await createImage(imgPath);
+  console.log(currentImage)
+  // contanier.append(currentImage);
+
+};
+loadNPause(
+  "/Jones_starter_file/img/img-1.jpg"
+);
